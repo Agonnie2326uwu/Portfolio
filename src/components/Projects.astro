@@ -1,0 +1,164 @@
+---
+const projects = [
+  {
+    title: 'The Green Dragon',
+    type: 'E-Commerce Platform',
+    desc: 'A full-featured marketplace where communities connect over shared goods. Built with modern web technologies for a seamless shopping experience.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    repo: 'https://github.com/Agonnie2326uwu/Hangarin',
+  },
+  {
+    title: 'Palawan Endemic',
+    type: 'Wildlife & Conservation',
+    desc: 'A digital guide showcasing the unique endemic species of Palawan, Philippines. Features species profiles, habitat maps, and conservation resources.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
+    repo: 'https://github.com/Agonnie2326uwu/Palawan-Endemic',
+  },
+];
+---
+
+<section class="section projects-section" id="projects">
+  <div class="night-bg"></div>
+  <div class="moon-big moon-top-right"></div>
+  <div class="mountains">
+    <div class="mountain mountain-1"></div>
+    <div class="mountain mountain-2"></div>
+    <div class="mountain mountain-3"></div>
+    <div class="mountain mountain-4"></div>
+    <div class="mountain mountain-5"></div>
+  </div>
+  <div class="trees">
+    <div class="tree tree-1"><div class="tree-body"></div><div class="tree-trunk"></div></div>
+    <div class="tree tree-2"><div class="tree-body"></div><div class="tree-trunk"></div></div>
+    <div class="tree tree-3"><div class="tree-body"></div><div class="tree-trunk"></div></div>
+    <div class="tree tree-4"><div class="tree-body"></div><div class="tree-trunk"></div></div>
+    <div class="tree tree-5"><div class="tree-body"></div><div class="tree-trunk"></div></div>
+    <div class="tree tree-6"><div class="tree-body"></div><div class="tree-trunk"></div></div>
+  </div>
+  <div class="night-overlay"></div>
+  <div class="star star-1"></div>
+  <div class="star star-3"></div>
+  <div class="star star-5"></div>
+  <div class="star star-8"></div>
+  <div class="star star-10"></div>
+  <div class="projects-inner night-inner">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">A selection of work I've built along my journey.</p>
+
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <div class="project-card card">
+          <div class="project-type">{project.type}</div>
+          <h3 class="project-title">{project.title}</h3>
+          <p class="project-desc">{project.desc}</p>
+          <div class="project-tags">
+            {project.tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+          {(project.repo || project.link) && (
+            <div class="project-links">
+              {project.repo && <a href={project.repo} target="_blank" rel="noopener noreferrer" class="btn-project">View on GitHub</a>}
+              {project.link && <a href={project.link} target="_blank" rel="noopener noreferrer" class="btn-project btn-project-outline">Live Demo</a>}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+  }
+
+  .project-type {
+    font-size: 0.78rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .project-title {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+
+  .project-desc {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 4px 14px;
+    border-radius: 20px;
+    background: rgba(124, 109, 240, 0.15);
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-card-border);
+  }
+
+  .btn-project {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: var(--color-primary);
+    color: #fff;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-project:hover {
+    background: var(--color-primary-dark);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(124, 109, 240, 0.4);
+  }
+
+  .btn-project-outline {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
+
+  .btn-project-outline:hover {
+    background: var(--color-primary);
+    color: #fff;
+  }
+</style>

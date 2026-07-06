@@ -1,0 +1,148 @@
+---
+const skills = [
+  {
+    name: 'Java',
+    icon: '☕',
+    level: 'Advanced',
+    projects: 8,
+    desc: 'Object-oriented programming, data structures, and cross-platform application development.',
+  },
+  {
+    name: 'Python',
+    icon: '🐍',
+    level: 'Advanced',
+    projects: 6,
+    desc: 'Scripting, automation, data processing, and clean, readable code for diverse use cases.',
+  },
+  {
+    name: 'C++',
+    icon: '⚙️',
+    level: 'Intermediate',
+    projects: 5,
+    desc: 'Systems programming, memory management, and performant algorithm implementation.',
+  },
+  {
+    name: 'C#',
+    icon: '🔷',
+    level: 'Intermediate',
+    projects: 4,
+    desc: 'Desktop applications and game development using the .NET framework.',
+  },
+];
+---
+
+<section class="section skills-section" id="skills">
+  <div class="cosmic-bg"></div>
+  <div class="stars-dense"></div>
+  <div class="cosmic-overlay"></div>
+  <div class="moon-big moon-top-right"></div>
+  <div class="planet planet-nebula" style="top:45%;left:6%;transform:scale(0.9);"></div>
+  <div class="planet planet-small" style="bottom:20%;right:5%;"></div>
+  <div class="constellation constellation-3">
+    <svg viewBox="0 0 110 75">
+      <circle class="constellation-dot" cx="20" cy="60" r="2" />
+      <circle class="constellation-dot" cx="35" cy="25" r="2.5" />
+      <circle class="constellation-dot" cx="55" cy="40" r="2" />
+      <circle class="constellation-dot" cx="80" cy="15" r="2.5" />
+      <circle class="constellation-dot" cx="95" cy="50" r="2" />
+      <line class="constellation-line" x1="20" y1="60" x2="35" y2="25" />
+      <line class="constellation-line" x1="35" y1="25" x2="55" y2="40" />
+      <line class="constellation-line" x1="55" y1="40" x2="80" y2="15" />
+      <line class="constellation-line constellation-line-2" x1="80" y1="15" x2="95" y2="50" />
+    </svg>
+  </div>
+  <div class="star star-2"></div>
+  <div class="star star-4"></div>
+  <div class="star star-5"></div>
+  <div class="star star-8"></div>
+  <div class="star star-10"></div>
+  <div class="star star-1"></div>
+  <div class="star star-9"></div>
+  <div class="skills-inner cosmic-inner">
+    <h2 class="section-title">Skills &amp; Technologies</h2>
+    <p class="section-subtitle">Programming languages and tools I've worked with.</p>
+
+    <div class="skills-grid">
+      {skills.map((skill) => (
+        <div class="skill-card card">
+          <div class="skill-header">
+            <span class="skill-icon">{skill.icon}</span>
+            <div>
+              <h3 class="skill-name">{skill.name}</h3>
+              <span class="skill-level">{skill.level}</span>
+            </div>
+          </div>
+          <p class="skill-desc">{skill.desc}</p>
+          <div class="skill-footer">
+            <span class="skill-stat">{skill.projects} projects</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skills-inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .skill-card {
+    padding: 24px;
+  }
+
+  .skill-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .skill-icon {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+  }
+
+  .skill-name {
+    font-size: 1.15rem;
+    margin-bottom: 2px;
+    color: #fff;
+  }
+
+  .skill-level {
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .skill-desc {
+    font-size: 0.92rem;
+    color: var(--color-text);
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+
+  .skill-footer {
+    padding-top: 12px;
+    border-top: 1px solid var(--color-card-border);
+  }
+
+  .skill-stat {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+  }
+</style>

@@ -1,0 +1,143 @@
+---
+const sections = [
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Goals', href: '#goals' },
+  { label: 'Contact', href: '#contact' },
+];
+---
+
+<nav class="nav">
+  <div class="nav-glow"></div>
+  <a href="#" class="nav-brand">
+    <svg class="nav-constellation" viewBox="0 0 40 24" width="40" height="24">
+      <circle class="nav-star" cx="6" cy="18" r="1.8" />
+      <circle class="nav-star" cx="16" cy="8" r="1.5" />
+      <circle class="nav-star" cx="26" cy="14" r="1.8" />
+      <circle class="nav-star" cx="34" cy="6" r="1.5" />
+      <line class="nav-line" x1="6" y1="18" x2="16" y2="8" />
+      <line class="nav-line" x1="16" y1="8" x2="26" y2="14" />
+      <line class="nav-line" x1="26" y1="14" x2="34" y2="6" />
+    </svg>
+    <span class="nav-logo">CD</span>
+  </a>
+  <ul class="nav-links">
+    {sections.map((s) => (
+      <li><a href={s.href}>{s.label}</a></li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 48px;
+    background: rgba(6, 10, 26, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(124, 109, 240, 0.12);
+  }
+
+  .nav-glow {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(124, 109, 240, 0.3), rgba(74, 158, 255, 0.3), transparent);
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-constellation {
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  .nav-star {
+    fill: var(--color-accent);
+    animation: twinkle 3s ease-in-out infinite;
+  }
+
+  .nav-star:nth-child(2) { animation-delay: 0.8s; }
+  .nav-star:nth-child(3) { animation-delay: 1.6s; }
+  .nav-star:nth-child(4) { animation-delay: 2.4s; }
+
+  .nav-line {
+    stroke: rgba(74, 158, 255, 0.25);
+    stroke-width: 0.6;
+    stroke-dasharray: 3 3;
+    animation: dashMove 15s linear infinite;
+  }
+
+  .nav-logo {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 2px;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+  }
+
+  .nav-links a {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-primary);
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    border-radius: 1px;
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  @media (max-width: 640px) {
+    .nav {
+      padding: 14px 20px;
+    }
+    .nav-constellation {
+      display: none;
+    }
+    .nav-links {
+      gap: 14px;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+    }
+  }
+</style>

@@ -1,0 +1,137 @@
+---
+import Navigation from './Navigation.astro';
+---
+
+<Navigation />
+
+<section class="hero" id="home">
+  <div class="cosmic-bg"></div>
+  <div class="stars-dense"></div>
+  <div class="hero-nebula"></div>
+  <div class="moon moon-hero"></div>
+  <div class="planet planet-saturn" style="top:22%;left:8%;"></div>
+  <div class="planet planet-small" style="bottom:18%;right:6%;"></div>
+  <div class="constellation constellation-1">
+    <svg viewBox="0 0 120 80">
+      <circle class="constellation-dot" cx="10" cy="20" r="2.5" />
+      <circle class="constellation-dot" cx="30" cy="55" r="2" />
+      <circle class="constellation-dot" cx="60" cy="15" r="2.5" />
+      <circle class="constellation-dot" cx="90" cy="45" r="2" />
+      <circle class="constellation-dot" cx="110" cy="25" r="2" />
+      <line class="constellation-line" x1="10" y1="20" x2="30" y2="55" />
+      <line class="constellation-line" x1="30" y1="55" x2="60" y2="15" />
+      <line class="constellation-line" x1="60" y1="15" x2="90" y2="45" />
+      <line class="constellation-line constellation-line-2" x1="90" y1="45" x2="110" y2="25" />
+    </svg>
+  </div>
+  <div class="star star-1"></div>
+  <div class="star star-2"></div>
+  <div class="star star-4"></div>
+  <div class="star star-6"></div>
+  <div class="star star-8"></div>
+  <div class="shooting-star shooting-star-1"></div>
+  <div class="shooting-star shooting-star-2"></div>
+  <div class="hero-content">
+    <p class="hero-greeting">Hello, I'm</p>
+    <h1 class="hero-name">Carl De Castro</h1>
+    <p class="hero-role">Computer Science Student &amp; Software Developer</p>
+    <p class="hero-tagline">Exploring code, solving problems, and building things that matter.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-nebula {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(124, 109, 240, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 60%, rgba(74, 158, 255, 0.1) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 20%, rgba(240, 192, 64, 0.06) 0%, transparent 40%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    text-align: center;
+    z-index: 2;
+    max-width: 700px;
+  }
+
+  .hero-greeting {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    animation: fadeInUp 0.6s ease 0.2s both;
+  }
+
+  .hero-name {
+    font-size: 3.6rem;
+    color: #fff;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+    animation: fadeInUp 0.6s ease 0.3s both;
+    letter-spacing: -1px;
+  }
+
+  .hero-role {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 12px;
+    font-weight: 400;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 0.6s ease 0.4s both;
+  }
+
+  .hero-tagline {
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 36px;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 0.6s ease 0.5s both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s ease 0.6s both;
+  }
+
+  .hero-actions .btn-outline {
+    color: #fff;
+    border-color: #fff;
+    border-width: 2px;
+  }
+
+  .hero-actions .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+
+  @media (max-width: 640px) {
+    .hero-name {
+      font-size: 2.2rem;
+    }
+    .hero-role {
+      font-size: 1rem;
+    }
+  }
+</style>
