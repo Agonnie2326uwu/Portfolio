@@ -21,6 +21,73 @@ const { title = "Carl De Castro | A Hobbit's Portfolio", description = "A CS stu
   </head>
   <body>
     <slot />
+    <button id="backtotop" class="back-to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+    <script>
+      // Intersection Observer for scroll-triggered animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-visible');
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+      });
+
+      // Back to top button
+      const backBtn = document.getElementById('backtotop');
+      let lastScroll = 0;
+
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        if (scrollY > 300) {
+          backBtn.classList.add('visible');
+        } else {
+          backBtn.classList.remove('visible');
+        }
+        lastScroll = scrollY;
+      });
+
+      backBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Parallax scroll effect
+      window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        document.querySelectorAll('[data-parallax]').forEach(el => {
+          const speed = parseFloat(el.getAttribute('data-parallax')) || 0.3;
+          el.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+      });
+
+      // Interactive constellation dots
+      document.addEventListener('mousemove', (e) => {
+        const dots = document.querySelectorAll('.constellation-dot');
+        const mx = e.clientX;
+        const my = e.clientY;
+        dots.forEach(dot => {
+          const rect = dot.getBoundingClientRect();
+          const dx = mx - (rect.left + rect.width / 2);
+          const dy = my - (rect.top + rect.height / 2);
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 80) {
+            const glow = Math.max(0, 1 - dist / 80);
+            dot.style.filter = `drop-shadow(0 0 ${8 + glow * 12}px rgba(74, 158, 255, ${0.4 + glow * 0.6}))`;
+            dot.style.fill = '#fff';
+          } else {
+            dot.style.filter = '';
+            dot.style.fill = '';
+          }
+        });
+      });
+    </script>
   </body>
 </html>
 

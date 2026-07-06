@@ -2,6 +2,12 @@
 ---
 
 <footer class="footer">
+  <div class="footer-stars"></div>
+  <div class="star star-1" style="z-index:0;"></div>
+  <div class="star star-3" style="z-index:0;"></div>
+  <div class="star star-5" style="z-index:0; top:50%;"></div>
+  <div class="star star-7" style="z-index:0; top:80%;"></div>
+  <div class="star star-9" style="z-index:0; top:30%; left:70%;"></div>
   <div class="footer-content">
     <div class="footer-top">
       <div class="footer-brand">
@@ -23,15 +29,38 @@
 
 <style>
   .footer {
-    background: #060a1a;
+    position: relative;
+    overflow: hidden;
     color: var(--color-text);
     padding: 60px 24px 0;
     border-top: 1px solid rgba(124, 109, 240, 0.1);
   }
 
+  .footer-stars {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(1px 1px at 5% 20%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 70%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 30%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(2px 2px at 40% 80%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 15%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 65% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(2px 2px at 80% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 85%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 35% 50%, rgba(200,180,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 45%, rgba(255,255,255,0.15) 0%, transparent 100%),
+      radial-gradient(1px 1px at 10% 90%, rgba(200,180,255,0.15) 0%, transparent 100%),
+      linear-gradient(180deg, #060a1a 0%, #080c24 100%);
+  }
+
   .footer-content {
-    max-width: 960px;
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 0 24px;
   }
 
   .footer-top {

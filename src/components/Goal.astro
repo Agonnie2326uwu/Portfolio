@@ -2,7 +2,7 @@
 ---
 
 <section class="section goals-section" id="goals">
-  <div class="night-bg"></div>
+  <div class="night-bg" data-parallax="0.15"></div>
   <div class="moon-big moon-top-left"></div>
   <div class="mountains">
     <div class="mountain mountain-2"></div>
@@ -16,18 +16,42 @@
     <div class="tree tree-6"><div class="tree-body"></div><div class="tree-trunk"></div></div>
   </div>
   <div class="night-overlay"></div>
-  <div class="star star-2"></div>
-  <div class="star star-4"></div>
+  <div class="planet planet-nebula" style="top:10%;right:4%;transform:scale(0.7);"></div>
+  <div class="planet planet-small" style="bottom:25%;left:5%;"></div>
+  <div class="constellation constellation-1" style="top:auto;bottom:15%;left:3%;width:90px;height:60px;">
+    <svg viewBox="0 0 90 60">
+      <circle class="constellation-dot" cx="12" cy="40" r="2.5" />
+      <circle class="constellation-dot" cx="28" cy="10" r="2" />
+      <circle class="constellation-dot" cx="48" cy="25" r="2.5" />
+      <circle class="constellation-dot" cx="68" cy="8" r="2" />
+      <circle class="constellation-dot" cx="82" cy="45" r="2" />
+      <line class="constellation-line" x1="12" y1="40" x2="28" y2="10" />
+      <line class="constellation-line" x1="28" y1="10" x2="48" y2="25" />
+      <line class="constellation-line" x1="48" y1="25" x2="68" y2="8" />
+      <line class="constellation-line constellation-line-2" x1="68" y1="8" x2="82" y2="45" />
+    </svg>
+  </div>
+  <div class="particle" style="bottom:20%;left:8%;--dur:17s;--delay:2s;--drift:18px;"></div>
+  <div class="particle" style="bottom:45%;left:50%;--dur:21s;--delay:6s;--drift:-14px;--opacity:0.3;"></div>
+  <div class="particle" style="bottom:65%;left:25%;--dur:19s;--delay:1s;--drift:10px;"></div>
+  <div class="shooting-star" style="top:10%;left:20%;animation:shootStar 13s ease-in-out 6s infinite;width:2px;height:2px;"></div>
+  <div class="shooting-star" style="top:35%;right:5%;animation:shootStar 17s ease-in-out 11s infinite;"></div>
   <div class="star star-1"></div>
+  <div class="star star-2"></div>
+  <div class="star star-3"></div>
+  <div class="star star-4"></div>
   <div class="star star-5"></div>
+  <div class="star star-6"></div>
   <div class="star star-7"></div>
+  <div class="star star-8"></div>
   <div class="star star-9"></div>
+  <div class="star star-10"></div>
   <div class="goals-inner night-inner">
-    <h2 class="section-title">Goals &amp; Aspirations</h2>
-    <p class="section-subtitle">What I'm working toward.</p>
+    <h2 class="section-title" data-animate>Goals &amp; Aspirations</h2>
+    <p class="section-subtitle" data-animate="fade">What I'm working toward.</p>
 
     <div class="goals-grid">
-      <div class="goal-card card">
+      <div class="goal-card card" data-animate="scale" style="transition-delay:0.1s;">
         <div class="goal-icon">💻</div>
         <h3 class="goal-title">Full-Stack Developer</h3>
         <p>
@@ -36,7 +60,7 @@
         </p>
       </div>
 
-      <div class="goal-card card">
+      <div class="goal-card card" data-animate="scale" style="transition-delay:0.2s;">
         <div class="goal-icon">🐾</div>
         <h3 class="goal-title">Animal Sanctuary</h3>
         <p>
@@ -46,7 +70,7 @@
       </div>
     </div>
 
-    <div class="goal-combined card">
+    <div class="goal-combined card" data-animate="fade">
       <p>
         Combining my passion for technology with my love for animals is something I aspire to achieve
         in the future.

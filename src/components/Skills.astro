@@ -32,8 +32,8 @@ const skills = [
 ---
 
 <section class="section skills-section" id="skills">
-  <div class="cosmic-bg"></div>
-  <div class="stars-dense"></div>
+  <div class="cosmic-bg" data-parallax="0.15"></div>
+  <div class="stars-dense" data-parallax="0.1"></div>
   <div class="cosmic-overlay"></div>
   <div class="moon-big moon-top-right"></div>
   <div class="planet planet-nebula" style="top:45%;left:6%;transform:scale(0.9);"></div>
@@ -51,6 +51,12 @@ const skills = [
       <line class="constellation-line constellation-line-2" x1="80" y1="15" x2="95" y2="50" />
     </svg>
   </div>
+  <div class="particle" style="bottom:15%;left:5%;--dur:19s;--delay:1s;--drift:20px;"></div>
+  <div class="particle" style="bottom:35%;left:45%;--dur:21s;--delay:4s;--drift:-10px;--opacity:0.3;"></div>
+  <div class="particle" style="bottom:55%;left:80%;--dur:17s;--delay:7s;--drift:15px;"></div>
+  <div class="particle" style="bottom:25%;left:20%;--dur:23s;--delay:2s;--drift:-25px;--opacity:0.25;"></div>
+  <div class="shooting-star" style="top:20%;left:40%;animation:shootStar 14s ease-in-out 5s infinite;width:2px;height:2px;"></div>
+  <div class="shooting-star" style="top:8%;right:15%;animation:shootStar 18s ease-in-out 10s infinite;"></div>
   <div class="star star-2"></div>
   <div class="star star-4"></div>
   <div class="star star-5"></div>
@@ -59,12 +65,12 @@ const skills = [
   <div class="star star-1"></div>
   <div class="star star-9"></div>
   <div class="skills-inner cosmic-inner">
-    <h2 class="section-title">Skills &amp; Technologies</h2>
-    <p class="section-subtitle">Programming languages and tools I've worked with.</p>
+    <h2 class="section-title" data-animate>Skills &amp; Technologies</h2>
+    <p class="section-subtitle" data-animate="fade">Programming languages and tools I've worked with.</p>
 
     <div class="skills-grid">
-      {skills.map((skill) => (
-        <div class="skill-card card">
+      {skills.map((skill, i) => (
+        <div class="skill-card card" data-animate="scale" style={"transition-delay:" + (i * 0.1) + "s"}>
           <div class="skill-header">
             <span class="skill-icon">{skill.icon}</span>
             <div>

@@ -2,8 +2,8 @@
 ---
 
 <section class="section about-section" id="about">
-  <div class="cosmic-bg"></div>
-  <div class="stars-dense"></div>
+  <div class="cosmic-bg" data-parallax="0.15"></div>
+  <div class="stars-dense" data-parallax="0.1"></div>
   <div class="cosmic-overlay"></div>
   <div class="moon-big moon-mid-right"></div>
   <div class="planet planet-saturn" style="top:45%;left:5%;transform:scale(0.8);"></div>
@@ -29,6 +29,13 @@
       <line class="constellation-line" x1="60" y1="15" x2="90" y2="45" />
     </svg>
   </div>
+  <div class="particle" style="bottom:20%;left:10%;--dur:18s;--delay:0s;--drift:15px;"></div>
+  <div class="particle" style="bottom:40%;left:30%;--dur:22s;--delay:3s;--drift:-20px;--opacity:0.3;"></div>
+  <div class="particle" style="bottom:60%;left:55%;--dur:16s;--delay:6s;--drift:10px;"></div>
+  <div class="particle" style="bottom:30%;left:75%;--dur:20s;--delay:2s;--drift:-15px;--opacity:0.25;"></div>
+  <div class="particle" style="bottom:70%;left:85%;--dur:14s;--delay:5s;--drift:25px;"></div>
+  <div class="shooting-star" style="top:15%;right:30%;animation:shootStar 12s ease-in-out 3s infinite;width:2px;height:2px;"></div>
+  <div class="shooting-star" style="top:50%;right:10%;animation:shootStar 16s ease-in-out 8s infinite;"></div>
   <div class="star star-1"></div>
   <div class="star star-3"></div>
   <div class="star star-5"></div>
@@ -37,11 +44,11 @@
   <div class="star star-6"></div>
   <div class="star star-10"></div>
   <div class="about-inner cosmic-inner">
-    <h2 class="section-title">About Me</h2>
-    <p class="section-subtitle">A Computer Science student with a passion for building and learning.</p>
+    <h2 class="section-title" data-animate>About Me</h2>
+    <p class="section-subtitle" data-animate="fade">A Computer Science student with a passion for building and learning.</p>
 
     <div class="about-layout">
-      <div class="about-card card">
+      <div class="about-card card" data-animate="left">
         <div class="about-photo">
           <div class="photo-frame">
             <img src="/me.png" alt="Carl De Castro" class="photo-img" />
@@ -63,7 +70,7 @@
         </div>
       </div>
 
-      <div class="personal-info card">
+      <div class="personal-info card" data-animate="right">
         <div class="info-grid">
           <div class="info-item">
             <span class="info-icon">📛</span>
@@ -87,6 +94,20 @@
           </div>
         </div>
       </div>
+
+      <div class="learning-card card" data-animate="fade">
+        <div class="learning-content">
+          <span class="learning-badge">Currently Learning</span>
+          <div class="learning-detail">
+            <span class="learning-lang">日本語</span>
+            <span class="learning-label">Japanese Language</span>
+          </div>
+          <div class="learning-progress">
+            <div class="learning-bar" style="width:25%"></div>
+          </div>
+          <p class="learning-note">Building vocabulary and practicing conversation skills.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -99,18 +120,19 @@
 
   .about-card {
     display: flex;
-    gap: 36px;
-    align-items: center;
+    gap: 48px;
+    align-items: flex-start;
     padding: 40px;
   }
 
   .about-photo {
     flex-shrink: 0;
+    margin-top: 12px;
   }
 
   .photo-frame {
-    width: 160px;
-    height: 160px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     border: 3px solid var(--color-primary);
     overflow: hidden;
@@ -173,15 +195,92 @@
     color: var(--color-text);
   }
 
+  .learning-card {
+    padding: 24px 32px;
+  }
+
+  .learning-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .learning-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-secondary);
+    background: rgba(240, 192, 64, 0.1);
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(240, 192, 64, 0.2);
+  }
+
+  .learning-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .learning-lang {
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .learning-label {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+  }
+
+  .learning-progress {
+    flex: 1;
+    min-width: 120px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .learning-bar {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transition: width 0.6s ease;
+  }
+
+  .learning-note {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    width: 100%;
+  }
+
   @media (max-width: 640px) {
     .about-card {
       flex-direction: column;
       text-align: center;
       padding: 28px 20px;
+      align-items: center;
+    }
+    .about-photo {
+      margin-top: 0;
     }
     .photo-frame {
       width: 120px;
       height: 120px;
+    }
+
+    .learning-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .learning-progress {
+      width: 100%;
     }
   }
 </style>

@@ -66,8 +66,8 @@ img {
 }
 
 .section {
-  padding: 96px 24px;
-  max-width: 960px;
+  padding: 96px 48px;
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
 }
@@ -959,5 +959,280 @@ img {
   }
   100% {
     opacity: 0;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 109, 240, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 109, 240, 0.5);
+}
+
+/* Scroll-triggered animations */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+[data-animate].animate-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-animate="fade"] {
+  transform: none;
+}
+
+[data-animate="left"] {
+  transform: translateX(-30px);
+}
+
+[data-animate="left"].animate-visible {
+  transform: translateX(0);
+}
+
+[data-animate="right"] {
+  transform: translateX(30px);
+}
+
+[data-animate="right"].animate-visible {
+  transform: translateX(0);
+}
+
+[data-animate="scale"] {
+  transform: scale(0.9);
+}
+
+[data-animate="scale"].animate-visible {
+  transform: scale(1);
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(124, 109, 240, 0.3);
+  background: rgba(18, 24, 56, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--color-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: rgba(124, 109, 240, 0.2);
+  box-shadow: 0 4px 20px rgba(124, 109, 240, 0.3);
+  border-color: rgba(124, 109, 240, 0.5);
+}
+
+/* Floating particles */
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  z-index: 0;
+  animation: floatUp var(--dur, 15s) ease-in-out var(--delay, 0s) infinite;
+}
+
+.particle:nth-child(odd) {
+  background: rgba(200, 180, 255, 0.15);
+}
+
+.particle:nth-child(3n) {
+  background: rgba(255, 255, 255, 0.1);
+  width: 2px;
+  height: 2px;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--opacity, 0.4);
+  }
+  90% {
+    opacity: var(--opacity, 0.4);
+  }
+  100% {
+    transform: translateY(-60vh) translateX(var(--drift, 20px));
+    opacity: 0;
+  }
+}
+
+/* Planet glow on hover */
+.planet {
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.planet:hover {
+  box-shadow: 0 0 50px rgba(124, 109, 240, 0.4), 0 0 100px rgba(124, 109, 240, 0.15) !important;
+  transform: scale(1.15) !important;
+}
+
+.planet-saturn:hover {
+  box-shadow: 0 0 50px rgba(232, 200, 138, 0.4), 0 0 100px rgba(232, 200, 138, 0.15) !important;
+}
+
+.planet-small:hover {
+  box-shadow: 0 0 40px rgba(74, 122, 154, 0.5) !important;
+}
+
+/* Constellation dot glow on hover */
+.constellation-dot {
+  transition: fill 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.constellation-dot:hover {
+  fill: #fff;
+  filter: drop-shadow(0 0 6px rgba(74, 158, 255, 0.8));
+}
+
+/* Section dividers */
+.section-divider {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  margin-top: -1px;
+  z-index: 1;
+}
+
+.section-divider svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+}
+
+.divider-wave {
+  fill: var(--color-bg);
+  opacity: 0.5;
+}
+
+.divider-mountain {
+  fill: rgba(6, 10, 26, 0.3);
+}
+
+/* Parallax base */
+[data-parallax] {
+  will-change: transform;
+}
+
+/* Responsive fixes for very small screens */
+@media (max-width: 480px) {
+  .section {
+    padding: 64px 16px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 36px;
+  }
+
+  .hero-name {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-role {
+    font-size: 0.9rem !important;
+  }
+
+  .hero-tagline {
+    font-size: 0.85rem !important;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .about-card {
+    padding: 20px !important;
+    gap: 20px !important;
+  }
+
+  .photo-frame {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .goals-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-card {
+    padding: 20px !important;
+    gap: 20px !important;
+  }
+
+  .contact-info {
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-top: 16px !important;
+    border-left: none !important;
+    border-top: 1px solid var(--color-card-border) !important;
+  }
+
+  .back-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .footer {
+    padding: 40px 16px 0 !important;
   }
 }
