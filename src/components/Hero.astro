@@ -66,24 +66,15 @@ import Navigation from './Navigation.astro';
   <div class="shooting-star" style="top:30%;right:60%;animation: shootStar 14s ease-in-out 4s infinite;width:2px;height:2px;"></div>
   <div class="shooting-star" style="top:5%;right:30%;animation: shootStar 10s ease-in-out 8s infinite;"></div>
   <div class="hero-content">
-    <p class="hero-greeting">Hello, I'm</p>
-    <h1 class="hero-name hero-gradient">Carl De Castro</h1>
-    <p class="hero-role">Computer Science Student &amp; Software Developer</p>
-    <p class="hero-tagline"><span class="typing-text"></span><span class="typing-cursor">|</span></p>
-    <div class="hero-info">
-      <div class="hero-info-item">
-        <span class="hero-info-label">Age</span>
-        <span class="hero-info-value">23</span>
-      </div>
-      <div class="hero-info-item">
-        <span class="hero-info-label">Locale</span>
-        <span class="hero-info-value">Puerto Princesa</span>
-      </div>
-      <div class="hero-info-item">
-        <span class="hero-info-label">Status</span>
-        <span class="hero-info-value">CS Student</span>
+    <div class="hero-photo-wrapper" data-animate="scale">
+      <div class="hero-photo-frame">
+        <img src="/me.png" alt="Carl De Castro" class="hero-photo-img" />
       </div>
     </div>
+    <p class="hero-greeting">Hello, I'm</p>
+    <h1 class="hero-name hero-gradient">Carl De Castro</h1>
+    <p class="hero-field">Web Developer &amp; Animal Lover</p>
+    <p class="hero-bio">A CS student from Puerto Princesa who enjoys building software, solving problems, and caring for animals. I'm always learning and working on projects I can be proud of.</p>
     <div class="hero-actions">
       <a href="#projects" class="btn btn-primary">View My Work</a>
       <a href="#contact" class="btn btn-outline">Get in Touch</a>
@@ -115,7 +106,36 @@ import Navigation from './Navigation.astro';
   .hero-content {
     text-align: center;
     z-index: 2;
-    max-width: 700px;
+    max-width: 640px;
+  }
+
+  .hero-photo-wrapper {
+    margin-bottom: 28px;
+    display: inline-block;
+  }
+
+  .hero-photo-frame {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid rgba(124, 109, 240, 0.3);
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 0 40px rgba(124, 109, 240, 0.2), 0 0 80px rgba(124, 109, 240, 0.08);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .hero-photo-frame:hover {
+    box-shadow: 0 0 60px rgba(124, 109, 240, 0.35), 0 0 120px rgba(124, 109, 240, 0.12);
+    border-color: rgba(124, 109, 240, 0.5);
+    transform: scale(1.02);
+  }
+
+  .hero-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .hero-greeting {
@@ -124,7 +144,7 @@ import Navigation from './Navigation.astro';
     color: var(--color-secondary);
     letter-spacing: 4px;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     animation: fadeInUp 0.6s ease 0.2s both;
     font-weight: 500;
   }
@@ -132,7 +152,7 @@ import Navigation from './Navigation.astro';
   .hero-name {
     font-size: 3.6rem;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
     animation: fadeInUp 0.6s ease 0.3s both;
     letter-spacing: -1px;
@@ -145,77 +165,27 @@ import Navigation from './Navigation.astro';
     background-clip: text;
   }
 
-  .typing-cursor {
-    animation: blink 0.8s step-end infinite;
-    color: var(--color-primary);
-    font-weight: 100;
-  }
-
-  @keyframes blink {
-    50% { opacity: 0; }
-  }
-
-  .hero-role {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
+  .hero-field {
+    font-size: 1.15rem;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     font-weight: 400;
     text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
     animation: fadeInUp 0.6s ease 0.4s both;
+    letter-spacing: 0.5px;
   }
 
-  .hero-tagline {
-    font-size: 1.05rem;
-    color: #fff;
-    margin-bottom: 24px;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
-    animation: fadeInUp 0.6s ease 0.5s both;
+  .hero-field strong {
+    color: var(--color-primary);
   }
 
-  .hero-info {
-    display: flex;
-    gap: 28px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 36px;
-    animation: fadeInUp 0.6s ease 0.55s both;
-  }
-
-  .hero-info-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    padding: 0 8px;
-    position: relative;
-  }
-
-  .hero-info-item + .hero-info-item::before {
-    content: '';
-    position: absolute;
-    left: -14px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1px;
-    height: 20px;
-    background: linear-gradient(180deg, transparent, rgba(255,255,255,0.1), transparent);
-  }
-
-  .hero-info-label {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--color-text-light);
-    opacity: 0.6;
-    font-weight: 500;
-  }
-
-  .hero-info-value {
+  .hero-bio {
     font-size: 1rem;
-    color: #fff;
-    font-weight: 500;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+    color: var(--color-text);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    animation: fadeInUp 0.6s ease 0.5s both;
   }
 
   .hero-actions {
@@ -242,43 +212,15 @@ import Navigation from './Navigation.astro';
     .hero-name {
       font-size: 2.2rem;
     }
-    .hero-role {
+    .hero-field {
       font-size: 1rem;
+    }
+    .hero-photo-frame {
+      width: 150px;
+      height: 150px;
+    }
+    .hero-bio {
+      font-size: 0.92rem;
     }
   }
 </style>
-
-<script>
-  const texts = [
-    "Exploring code, solving problems, and building things that matter.",
-    "Learning and growing every single day.",
-  ];
-  let textIndex = 0;
-  let charIndex = 0;
-  const el = document.querySelector('.typing-text');
-
-  function type() {
-    if (charIndex < texts[textIndex].length) {
-      el.textContent += texts[textIndex][charIndex];
-      charIndex++;
-      setTimeout(type, 40 + Math.random() * 30);
-    } else {
-      setTimeout(erase, 2500);
-    }
-  }
-
-  function erase() {
-    if (charIndex > 0) {
-      el.textContent = texts[textIndex].slice(0, charIndex - 1);
-      charIndex--;
-      setTimeout(erase, 20);
-    } else {
-      textIndex = (textIndex + 1) % texts.length;
-      setTimeout(type, 500);
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(type, 1200);
-  });
-</script>
