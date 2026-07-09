@@ -71,13 +71,15 @@ import Navigation from './Navigation.astro';
         <img src="/me.png" alt="Carl De Castro" class="hero-photo-img" />
       </div>
     </div>
-    <p class="hero-greeting">Hello, I'm</p>
-    <h1 class="hero-name hero-gradient">Carl De Castro</h1>
-    <p class="hero-field">Web Developer &amp; Animal Lover</p>
-    <p class="hero-bio">A CS student from Puerto Princesa who enjoys building software, solving problems, and caring for animals. I'm always learning and working on projects I can be proud of.</p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">View My Work</a>
-      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    <div class="hero-text">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name hero-gradient">Carl De Castro</h1>
+      <p class="hero-field">Web Developer &amp; Animal Lover</p>
+      <p class="hero-bio">A CS student from Puerto Princesa who enjoys building software, solving problems, and caring for animals. I'm always learning and working on projects I can be proud of.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
     </div>
   </div>
 </section>
@@ -104,23 +106,24 @@ import Navigation from './Navigation.astro';
   }
 
   .hero-content {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 60px;
     z-index: 2;
-    max-width: 640px;
+    max-width: 900px;
+    width: 100%;
   }
 
   .hero-photo-wrapper {
-    margin-bottom: 32px;
-    display: inline-block;
+    flex-shrink: 0;
   }
 
   .hero-photo-frame {
-    width: 200px;
-    height: 200px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     border: 3px solid rgba(124, 109, 240, 0.3);
     overflow: hidden;
-    margin: 0 auto;
     box-shadow: 0 0 40px rgba(124, 109, 240, 0.2), 0 0 80px rgba(124, 109, 240, 0.08);
     transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
   }
@@ -136,6 +139,11 @@ import Navigation from './Navigation.astro';
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  .hero-text {
+    flex: 1;
+    text-align: left;
   }
 
   .hero-greeting {
@@ -184,8 +192,8 @@ import Navigation from './Navigation.astro';
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    transform: none;
     width: 40px;
     height: 2px;
     background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
@@ -197,17 +205,14 @@ import Navigation from './Navigation.astro';
     font-size: 1rem;
     color: var(--color-text);
     line-height: 1.8;
-    max-width: 500px;
-    margin: 0 auto 36px;
+    max-width: 480px;
+    margin-bottom: 36px;
     animation: fadeInUp 0.6s ease 0.5s both;
   }
 
   .hero-actions {
     display: flex;
     gap: 16px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     animation: fadeInUp 0.6s ease 0.6s both;
   }
 
@@ -222,17 +227,44 @@ import Navigation from './Navigation.astro';
     color: #fff;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      gap: 32px;
+      text-align: center;
+    }
+
+    .hero-text {
+      text-align: center;
+    }
+
+    .hero-field::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hero-bio {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
     .hero-name {
       font-size: 2.2rem;
     }
+
     .hero-field {
       font-size: 1rem;
     }
+
     .hero-photo-frame {
-      width: 150px;
-      height: 150px;
+      width: 180px;
+      height: 180px;
     }
+
     .hero-bio {
       font-size: 0.92rem;
     }
