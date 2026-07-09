@@ -77,11 +77,11 @@ import Navigation from './Navigation.astro';
         <h1 class="hero-name hero-gradient">Carl De Castro</h1>
         <p class="hero-field">Web Developer &amp; Animal Lover</p>
         <p class="hero-bio">A CS student from Puerto Princesa who enjoys building software, solving problems, and caring for animals. I'm always learning and working on projects I can be proud of.</p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-outline">Get in Touch</a>
-        </div>
       </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
     </div>
   </div>
 </section>
@@ -111,13 +111,14 @@ import Navigation from './Navigation.astro';
     background: linear-gradient(135deg, var(--color-card) 0%, rgba(18, 24, 56, 0.6) 100%);
     border: 1px solid var(--color-card-border);
     border-radius: var(--radius-lg);
-    padding: 48px 56px;
+    padding: 48px 56px 40px;
     box-shadow: var(--shadow-sm), var(--shadow-glow);
     backdrop-filter: blur(12px);
     position: relative;
     z-index: 2;
     max-width: 1000px;
     width: 100%;
+    text-align: center;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
   }
 
@@ -145,8 +146,10 @@ import Navigation from './Navigation.astro';
   .hero-content {
     display: flex;
     align-items: center;
-    gap: 60px;
+    justify-content: center;
+    gap: 48px;
     width: 100%;
+    margin-bottom: 32px;
   }
 
   .hero-photo-wrapper {
@@ -173,8 +176,8 @@ import Navigation from './Navigation.astro';
   }
 
   .hero-photo-frame {
-    width: 260px;
-    height: 260px;
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
     border: 3px solid rgba(124, 109, 240, 0.3);
     overflow: hidden;
@@ -196,7 +199,6 @@ import Navigation from './Navigation.astro';
   }
 
   .hero-text {
-    flex: 1;
     text-align: left;
   }
 
@@ -232,14 +234,14 @@ import Navigation from './Navigation.astro';
   .hero-field {
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-weight: 400;
     text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
     animation: fadeInUp 0.6s ease 0.4s both;
     letter-spacing: 0.5px;
     position: relative;
     display: inline-block;
-    padding-bottom: 16px;
+    padding-bottom: 14px;
   }
 
   .hero-field::after {
@@ -247,7 +249,6 @@ import Navigation from './Navigation.astro';
     position: absolute;
     bottom: 0;
     left: 0;
-    transform: none;
     width: 40px;
     height: 2px;
     background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
@@ -259,14 +260,14 @@ import Navigation from './Navigation.astro';
     font-size: 1rem;
     color: var(--color-text);
     line-height: 1.8;
-    max-width: 480px;
-    margin-bottom: 36px;
+    max-width: 460px;
     animation: fadeInUp 0.6s ease 0.5s both;
   }
 
   .hero-actions {
     display: flex;
     gap: 16px;
+    justify-content: center;
     flex-wrap: wrap;
     animation: fadeInUp 0.6s ease 0.6s both;
   }
@@ -284,13 +285,13 @@ import Navigation from './Navigation.astro';
 
   @media (max-width: 768px) {
     .hero-card {
-      padding: 32px 24px;
+      padding: 32px 24px 28px;
     }
 
     .hero-content {
       flex-direction: column;
-      gap: 32px;
-      text-align: center;
+      gap: 24px;
+      margin-bottom: 24px;
     }
 
     .hero-text {
@@ -305,10 +306,6 @@ import Navigation from './Navigation.astro';
     .hero-bio {
       margin-left: auto;
       margin-right: auto;
-    }
-
-    .hero-actions {
-      justify-content: center;
     }
 
     .hero-name {
