@@ -118,6 +118,25 @@ import Navigation from './Navigation.astro';
 
   .hero-photo-wrapper {
     flex-shrink: 0;
+    position: relative;
+  }
+
+  .hero-photo-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    border: 2px solid rgba(124, 109, 240, 0.15);
+    opacity: 0.6;
+  }
+
+  .hero-photo-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: -24px;
+    border-radius: 50%;
+    border: 1px solid rgba(124, 109, 240, 0.08);
+    opacity: 0.4;
   }
 
   .hero-photo-frame {
@@ -215,6 +234,7 @@ import Navigation from './Navigation.astro';
   .hero-actions {
     display: flex;
     gap: 16px;
+    flex-wrap: wrap;
     animation: fadeInUp 0.6s ease 0.6s both;
   }
 
