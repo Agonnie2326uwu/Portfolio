@@ -12,7 +12,7 @@
   --color-fire: #f06a2a;
   --color-ember: #ffcc44;
 
-  --font-heading: 'Playfair Display', serif;
+  --font-heading: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
 
   --radius-sm: 8px;
@@ -944,7 +944,7 @@ img {
 
 @keyframes shootStar {
   0% {
-    transform: translateX(0) translateY(0) rotate(-45deg);
+    transform: translateX(0) translateY(0) rotate(135deg);
     opacity: 0;
   }
   5% {
@@ -954,7 +954,7 @@ img {
     opacity: 1;
   }
   25% {
-    transform: translateX(-250px) translateY(250px) rotate(-45deg);
+    transform: translateX(-250px) translateY(250px) rotate(135deg);
     opacity: 0;
   }
   100% {
