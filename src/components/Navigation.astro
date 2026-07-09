@@ -86,7 +86,10 @@ const sections = [
     font-family: var(--font-heading);
     font-size: 1.3rem;
     font-weight: 700;
-    color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     letter-spacing: 2px;
   }
 
@@ -98,16 +101,18 @@ const sections = [
 
   .nav-links a {
     font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 500;
     color: var(--color-text);
     position: relative;
     padding: 4px 0;
     transition: color 0.3s ease;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
   }
 
   .nav-links a:hover {
-    color: var(--color-primary);
+    color: #fff;
   }
 
   .nav-links a::after {
@@ -120,6 +125,7 @@ const sections = [
     background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
     border-radius: 1px;
     transition: width 0.3s ease;
+    box-shadow: 0 0 8px vaR(--color-primary-glow);
   }
 
   .nav-links a:hover::after {

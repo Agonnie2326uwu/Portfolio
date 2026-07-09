@@ -241,11 +241,37 @@
   .goal-card p {
     font-size: 0.95rem;
     line-height: 1.8;
+    color: var(--color-text);
   }
 
   .goal-combined {
     text-align: center;
-    padding: 28px;
+    padding: 32px;
+    position: relative;
+  }
+
+  .goal-combined::before {
+    content: '"';
+    position: absolute;
+    top: 8px;
+    left: 20px;
+    font-size: 3rem;
+    color: var(--color-primary);
+    opacity: 0.2;
+    font-family: serif;
+    line-height: 1;
+  }
+
+  .goal-combined::after {
+    content: '"';
+    position: absolute;
+    bottom: 4px;
+    right: 20px;
+    font-size: 3rem;
+    color: var(--color-primary);
+    opacity: 0.2;
+    font-family: serif;
+    line-height: 1;
   }
 
   .goal-combined p {

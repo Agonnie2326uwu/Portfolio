@@ -122,10 +122,11 @@ import Navigation from './Navigation.astro';
     font-family: var(--font-heading);
     font-size: 1.1rem;
     color: var(--color-secondary);
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     text-transform: uppercase;
     margin-bottom: 8px;
     animation: fadeInUp 0.6s ease 0.2s both;
+    font-weight: 500;
   }
 
   .hero-name {
@@ -174,10 +175,10 @@ import Navigation from './Navigation.astro';
 
   .hero-info {
     display: flex;
-    gap: 24px;
+    gap: 28px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 32px;
+    margin-bottom: 36px;
     animation: fadeInUp 0.6s ease 0.55s both;
   }
 
@@ -185,21 +186,36 @@ import Navigation from './Navigation.astro';
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
+    gap: 4px;
+    padding: 0 8px;
+    position: relative;
+  }
+
+  .hero-info-item + .hero-info-item::before {
+    content: '';
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 20px;
+    background: linear-gradient(180deg, transparent, rgba(255,255,255,0.1), transparent);
   }
 
   .hero-info-label {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     color: var(--color-text-light);
-    opacity: 0.7;
+    opacity: 0.6;
+    font-weight: 500;
   }
 
   .hero-info-value {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #fff;
     font-weight: 500;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
   }
 
   .hero-actions {
