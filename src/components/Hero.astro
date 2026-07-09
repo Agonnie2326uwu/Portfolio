@@ -65,20 +65,22 @@ import Navigation from './Navigation.astro';
   <div class="shooting-star shooting-star-2"></div>
   <div class="shooting-star" style="top:30%;right:60%;animation: shootStar 14s ease-in-out 4s infinite;width:2px;height:2px;"></div>
   <div class="shooting-star" style="top:5%;right:30%;animation: shootStar 10s ease-in-out 8s infinite;"></div>
-  <div class="hero-content">
-    <div class="hero-photo-wrapper" data-animate="scale">
-      <div class="hero-photo-frame">
-        <img src="/me.png" alt="Carl De Castro" class="hero-photo-img" />
+  <div class="hero-card">
+    <div class="hero-content">
+      <div class="hero-photo-wrapper" data-animate="scale">
+        <div class="hero-photo-frame">
+          <img src="/me.png" alt="Carl De Castro" class="hero-photo-img" />
+        </div>
       </div>
-    </div>
-    <div class="hero-text">
-      <p class="hero-greeting">Hello, I'm</p>
-      <h1 class="hero-name hero-gradient">Carl De Castro</h1>
-      <p class="hero-field">Web Developer &amp; Animal Lover</p>
-      <p class="hero-bio">A CS student from Puerto Princesa who enjoys building software, solving problems, and caring for animals. I'm always learning and working on projects I can be proud of.</p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name hero-gradient">Carl De Castro</h1>
+        <p class="hero-field">Web Developer &amp; Animal Lover</p>
+        <p class="hero-bio">A CS student from Puerto Princesa who enjoys building software, solving problems, and caring for animals. I'm always learning and working on projects I can be proud of.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
       </div>
     </div>
   </div>
@@ -90,11 +92,9 @@ import Navigation from './Navigation.astro';
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 120px 48px 80px;
+    padding: 120px 24px 80px;
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid rgba(124, 109, 240, 0.15);
-    box-shadow: 0 4px 30px rgba(124, 109, 240, 0.06);
   }
 
   .hero-nebula {
@@ -107,12 +107,45 @@ import Navigation from './Navigation.astro';
     z-index: 1;
   }
 
+  .hero-card {
+    background: linear-gradient(135deg, var(--color-card) 0%, rgba(18, 24, 56, 0.6) 100%);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-lg);
+    padding: 48px 56px;
+    box-shadow: var(--shadow-sm), var(--shadow-glow);
+    backdrop-filter: blur(12px);
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    width: 100%;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(124, 109, 240, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hero-card:hover::before {
+    opacity: 1;
+  }
+
+  .hero-card:hover {
+    box-shadow: var(--shadow-lg), 0 0 60px var(--color-card-glow);
+    border-color: rgba(124, 109, 240, 0.3);
+  }
+
   .hero-content {
     display: flex;
     align-items: center;
     gap: 60px;
-    z-index: 2;
-    max-width: 900px;
     width: 100%;
   }
 
@@ -250,6 +283,10 @@ import Navigation from './Navigation.astro';
   }
 
   @media (max-width: 768px) {
+    .hero-card {
+      padding: 32px 24px;
+    }
+
     .hero-content {
       flex-direction: column;
       gap: 32px;
