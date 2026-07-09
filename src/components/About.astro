@@ -73,34 +73,22 @@
       <div class="personal-info card" data-animate="right">
         <div class="info-grid">
           <div class="info-item">
-            <svg class="info-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
+            <i data-lucide="user" class="info-icon"></i>
             <span class="info-label">Name</span>
             <span class="info-value">Carl De Castro</span>
           </div>
           <div class="info-item">
-            <svg class="info-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12 6 12 12 16 14"/>
-            </svg>
+            <i data-lucide="clock" class="info-icon"></i>
             <span class="info-label">Age</span>
             <span class="info-value">23</span>
           </div>
           <div class="info-item">
-            <svg class="info-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="M22 4L12 13 2 4"/>
-            </svg>
+            <i data-lucide="mail" class="info-icon"></i>
             <span class="info-label">Email</span>
             <span class="info-value">carldecastro989@gmail.com</span>
           </div>
           <div class="info-item">
-            <svg class="info-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-            </svg>
+            <i data-lucide="graduation-cap" class="info-icon"></i>
             <span class="info-label">Status</span>
             <span class="info-value">CS Student</span>
           </div>
@@ -189,7 +177,9 @@
   }
 
   .info-icon {
-    font-size: 1.4rem;
+    width: 22px;
+    height: 22px;
+    color: var(--color-text-light);
   }
 
   .info-label {
