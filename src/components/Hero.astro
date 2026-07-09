@@ -110,7 +110,7 @@ import Navigation from './Navigation.astro';
   }
 
   .hero-photo-wrapper {
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     display: inline-block;
   }
 
@@ -140,22 +140,24 @@ import Navigation from './Navigation.astro';
 
   .hero-greeting {
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--color-secondary);
     letter-spacing: 4px;
     text-transform: uppercase;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     animation: fadeInUp 0.6s ease 0.2s both;
     font-weight: 500;
+    opacity: 0.8;
   }
 
   .hero-name {
     font-size: 3.6rem;
     color: #fff;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
     animation: fadeInUp 0.6s ease 0.3s both;
     letter-spacing: -1px;
+    line-height: 1.1;
   }
 
   .hero-gradient {
@@ -166,25 +168,37 @@ import Navigation from './Navigation.astro';
   }
 
   .hero-field {
-    font-size: 1.15rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 16px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 20px;
     font-weight: 400;
     text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
     animation: fadeInUp 0.6s ease 0.4s both;
     letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 16px;
   }
 
-  .hero-field strong {
-    color: var(--color-primary);
+  .hero-field::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    border-radius: 1px;
+    opacity: 0.5;
   }
 
   .hero-bio {
     font-size: 1rem;
     color: var(--color-text);
     line-height: 1.8;
-    max-width: 520px;
-    margin: 0 auto 32px;
+    max-width: 500px;
+    margin: 0 auto 36px;
     animation: fadeInUp 0.6s ease 0.5s both;
   }
 
