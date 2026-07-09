@@ -5,28 +5,24 @@ const skills = [
     level: 'Advanced',
     projects: 8,
     desc: 'Object-oriented programming, data structures, and cross-platform application development.',
-    icon: 'coffee',
   },
   {
     name: 'Python',
     level: 'Advanced',
     projects: 6,
     desc: 'Scripting, automation, data processing, and clean, readable code for diverse use cases.',
-    icon: 'terminal',
   },
   {
     name: 'C++',
     level: 'Intermediate',
     projects: 5,
     desc: 'Systems programming, memory management, and performant algorithm implementation.',
-    icon: 'code-slash',
   },
   {
     name: 'C#',
     level: 'Intermediate',
     projects: 4,
     desc: 'Desktop applications and game development using the .NET framework.',
-    icon: 'brackets-curly',
   },
 ];
 ---
@@ -72,11 +68,8 @@ const skills = [
       {skills.map((skill, i) => (
         <div class="skill-card card" data-animate="scale" style={"transition-delay:" + (i * 0.1) + "s"}>
           <div class="skill-header">
-            <i data-lucide={skill.icon} class="skill-icon"></i>
-            <div>
-              <h3 class="skill-name">{skill.name}</h3>
-              <span class="skill-level">{skill.level}</span>
-            </div>
+            <h3 class="skill-name">{skill.name}</h3>
+            <span class="skill-level">{skill.level}</span>
           </div>
           <p class="skill-desc">{skill.desc}</p>
         </div>
@@ -107,18 +100,7 @@ const skills = [
   }
 
   .skill-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
     margin-bottom: 14px;
-  }
-
-  .skill-icon {
-    font-size: 2.2rem;
-    flex-shrink: 0;
-    width: 36px;
-    height: 36px;
-    color: var(--color-primary);
   }
 
   .skill-name {
