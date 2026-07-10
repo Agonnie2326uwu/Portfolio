@@ -155,37 +155,17 @@ import Navigation from './Navigation.astro';
     position: relative;
   }
 
-  .hero-photo-wrapper::before {
-    content: '';
-    position: absolute;
-    inset: -14px;
-    border-radius: 16px;
-    border: 2px solid rgba(124, 109, 240, 0.15);
-    opacity: 0.6;
-  }
-
-  .hero-photo-wrapper::after {
-    content: '';
-    position: absolute;
-    inset: -28px;
-    border-radius: 16px;
-    border: 1px solid rgba(124, 109, 240, 0.08);
-    opacity: 0.4;
-  }
-
   .hero-photo-frame {
     width: 340px;
     height: 340px;
     border-radius: 16px;
-    border: 3px solid rgba(124, 109, 240, 0.3);
     overflow: hidden;
     box-shadow: 0 0 40px rgba(124, 109, 240, 0.2), 0 0 80px rgba(124, 109, 240, 0.08);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
 
   .hero-photo-frame:hover {
     box-shadow: 0 0 60px rgba(124, 109, 240, 0.35), 0 0 120px rgba(124, 109, 240, 0.12);
-    border-color: rgba(124, 109, 240, 0.5);
     transform: scale(1.02);
   }
 
