@@ -61,19 +61,21 @@ const skills = [
   <div class="star star-1"></div>
   <div class="star star-9"></div>
   <div class="skills-inner cosmic-inner">
-    <h2 class="section-title" data-animate>Skills &amp; Technologies</h2>
-    <p class="section-subtitle" data-animate="fade">Programming languages and tools I've worked with.</p>
+    <div class="section-card">
+      <h2 class="section-title" data-animate>Skills &amp; Technologies</h2>
+      <p class="section-subtitle" data-animate="fade">Programming languages and tools I've worked with.</p>
 
-    <div class="skills-grid">
-      {skills.map((skill, i) => (
-        <div class="skill-card card" data-animate="scale" style={"transition-delay:" + (i * 0.1) + "s"}>
-          <div class="skill-header">
-            <h3 class="skill-name">{skill.name}</h3>
-            <span class="skill-level">{skill.level}</span>
+      <div class="skills-grid">
+        {skills.map((skill, i) => (
+          <div class="skill-card card" data-animate="scale" style={"transition-delay:" + (i * 0.1) + "s"}>
+            <div class="skill-header">
+              <h3 class="skill-name">{skill.name}</h3>
+              <span class="skill-level">{skill.level}</span>
+            </div>
+            <p class="skill-desc">{skill.desc}</p>
           </div>
-          <p class="skill-desc">{skill.desc}</p>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </div>
 </section>

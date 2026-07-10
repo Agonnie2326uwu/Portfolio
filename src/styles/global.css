@@ -305,6 +305,41 @@ img {
   z-index: 2;
 }
 
+.section-card {
+  background: linear-gradient(135deg, var(--color-card) 0%, rgba(18, 24, 56, 0.6) 100%);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: 48px 56px 40px;
+  box-shadow: var(--shadow-sm), var(--shadow-glow);
+  backdrop-filter: blur(12px);
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.section-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124, 109, 240, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.section-card:hover::before {
+  opacity: 1;
+}
+
+.section-card:hover {
+  box-shadow: var(--shadow-lg), 0 0 60px var(--color-card-glow);
+  border-color: rgba(124, 109, 240, 0.3);
+}
+
 /* Twinkling stars */
 .star {
   position: absolute;

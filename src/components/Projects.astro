@@ -70,29 +70,31 @@ const projects = [
   <div class="star star-9"></div>
   <div class="star star-10"></div>
   <div class="projects-inner night-inner">
-    <h2 class="section-title" data-animate>Projects</h2>
-    <p class="section-subtitle" data-animate="fade">A selection of work I've built along my journey.</p>
+    <div class="section-card">
+      <h2 class="section-title" data-animate>Projects</h2>
+      <p class="section-subtitle" data-animate="fade">A selection of work I've built along my journey.</p>
 
-    <div class="projects-grid">
-      {projects.map((project, i) => (
-        <div class="project-card card" data-animate="scale" style={"transition-delay:" + (i * 0.15) + "s"}>
-          {project.image && <div class="project-image"><img src={project.image} alt={project.title} /></div>}
-          <div class="project-type">{project.type}</div>
-          <h3 class="project-title">{project.title}</h3>
-          <p class="project-desc">{project.desc}</p>
-          <div class="project-tags">
-            {project.tags.map((tag) => (
-              <span class="tag">{tag}</span>
-            ))}
-          </div>
-          {(project.repo || project.link) && (
-            <div class="project-links">
-              {project.repo && <a href={project.repo} target="_blank" rel="noopener noreferrer" class="btn-project">View on GitHub</a>}
-              {project.link && <a href={project.link} target="_blank" rel="noopener noreferrer" class="btn-project btn-project-outline">Live Demo</a>}
+      <div class="projects-grid">
+        {projects.map((project, i) => (
+          <div class="project-card card" data-animate="scale" style={"transition-delay:" + (i * 0.15) + "s"}>
+            {project.image && <div class="project-image"><img src={project.image} alt={project.title} /></div>}
+            <div class="project-type">{project.type}</div>
+            <h3 class="project-title">{project.title}</h3>
+            <p class="project-desc">{project.desc}</p>
+            <div class="project-tags">
+              {project.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
             </div>
-          )}
-        </div>
-      ))}
+            {(project.repo || project.link) && (
+              <div class="project-links">
+                {project.repo && <a href={project.repo} target="_blank" rel="noopener noreferrer" class="btn-project">View on GitHub</a>}
+                {project.link && <a href={project.link} target="_blank" rel="noopener noreferrer" class="btn-project btn-project-outline">Live Demo</a>}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>
