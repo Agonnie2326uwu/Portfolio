@@ -21,12 +21,12 @@ const projects = [
 
 <section class="section projects-section" id="projects">
   <div class="projects-inner">
-      <h2 class="section-title" data-animate>Projects</h2>
-      <p class="section-subtitle" data-animate="fade">A selection of work I've built along my journey.</p>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">A selection of work I've built along my journey.</p>
 
       <div class="projects-grid">
         {projects.map((project, i) => (
-          <div class="project-card float-anim" data-animate="scale" style={"transition-delay:" + (i * 0.15) + "s;animation-delay:" + (i * 0.8) + "s"}>
+          <div class="project-card">
             {project.image && <div class="project-image"><img src={project.image} alt={project.title} /></div>}
             <div class="project-type">{project.type}</div>
             <h3 class="project-title">{project.title}</h3>
@@ -52,15 +52,6 @@ const projects = [
   .projects-section {
     position: relative;
     overflow: hidden;
-    background: url('/space.jpg') center/cover no-repeat;
-  }
-
-  .projects-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 6, 8, 0.2);
-    z-index: 0;
   }
 
   .projects-grid {
@@ -72,17 +63,16 @@ const projects = [
   .project-card {
     display: flex;
     flex-direction: column;
-    padding: 28px;
+    padding: 40px;
     border: var(--pixel-border);
     border-radius: var(--radius-md);
-    background: rgba(16, 8, 12, 0.85);
-    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.85);
+    transition: border-color 0.3s ease, transform 0.3s ease;
   }
 
   .project-card:hover {
-    border-color: var(--color-primary);
+    border-color: var(--color-text);
     transform: translateY(-4px);
-    box-shadow: var(--shadow-lg), 0 0 30px var(--color-card-glow);
   }
 
   .project-image {
@@ -102,7 +92,7 @@ const projects = [
 
   .project-type {
     font-size: 0.78rem;
-    color: var(--color-primary);
+    color: var(--color-text-light);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -112,7 +102,7 @@ const projects = [
   .project-title {
     font-size: 1.4rem;
     margin-bottom: 12px;
-    color: #fff;
+    color: var(--color-text);
   }
 
   .project-desc {
@@ -132,10 +122,10 @@ const projects = [
     font-size: 0.72rem;
     padding: 4px 14px;
     border-radius: 20px;
-    background: linear-gradient(135deg, rgba(124, 109, 240, 0.15) 0%, rgba(74, 158, 255, 0.1) 100%);
+    background: rgba(0, 0, 0, 0.05);
     color: var(--color-text);
     font-weight: 500;
-    border: 1px solid rgba(124, 109, 240, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     letter-spacing: 0.3px;
   }
 
@@ -155,29 +145,29 @@ const projects = [
     font-family: var(--font-body);
     font-size: 0.85rem;
     font-weight: 600;
-    background: var(--color-primary);
-    color: #fff;
+    border: 2px solid var(--color-text);
+    color: var(--color-text);
     transition: all 0.3s ease;
     letter-spacing: 0.3px;
+    background: transparent;
   }
 
   .btn-project:hover {
-    background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
-    color: #fff;
-    box-shadow: 0 4px 14px rgba(124, 109, 240, 0.4);
+    background: var(--color-text);
+    color: var(--color-bg);
     transform: translateY(-1px);
   }
 
   .btn-project-outline {
     background: transparent;
-    color: var(--color-primary);
-    border: 2px solid rgba(124, 109, 240, 0.3);
+    color: var(--color-text);
+    border: 2px solid var(--color-card-border);
   }
 
   .btn-project-outline:hover {
-    background: rgba(124, 109, 240, 0.1);
-    color: var(--color-primary);
-    border-color: var(--color-primary);
+    background: var(--color-text);
+    color: var(--color-bg);
+    border-color: var(--color-text);
     transform: translateY(-1px);
   }
 </style>

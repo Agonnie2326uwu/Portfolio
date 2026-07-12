@@ -3,28 +3,21 @@
 
 <section class="section about-section" id="about">
   <div class="about-inner">
-      <h2 class="section-title" data-animate>About Me</h2>
-      <p class="section-subtitle" data-animate="fade">A Computer Science student with a passion for building and learning.</p>
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">A glimpse into who I am and what drives me.</p>
 
       <div class="about-layout">
-        <div class="about-card card" data-animate="left">
+        <div class="about-card card">
           <div class="about-text">
             <p>
-              Hi! I'm Carl De Castro, a 23-year-old Computer Science student who enjoys learning about software
-              development and finding practical solutions through programming. Over the years, I've worked with
-              Java, Python, C++, and C# on different academic and personal projects, which helped me strengthen
-              my programming and problem-solving skills.
-            </p>
-            <p>
-              I like taking on new challenges because they give me the opportunity to improve and learn something
-              new. Outside of coding, I enjoy spending time with animals and learning more about wildlife. I'm
-              currently focused on building my experience as a developer while continuing to improve my technical
-              knowledge and create projects that I can be proud of.
+              CS student with experience in Java, Python, C++, and C# across academic and personal projects.
+              Focused on writing clean code, solving problems efficiently.
+              Outside of technology, I'm into helping stray animals and collecting cards.
             </p>
           </div>
         </div>
 
-        <div class="personal-info card" data-animate="right">
+        <div class="personal-info card">
           <div class="info-grid">
             <div class="info-item">
               <span class="info-label">Name</span>
@@ -44,6 +37,9 @@
             </div>
           </div>
       </div>
+      <div class="info-image">
+        <img src="/balls.png" alt="Decorative illustration" />
+      </div>
     </div>
   </div>
 </section>
@@ -52,53 +48,45 @@
   .about-section {
     position: relative;
     overflow: hidden;
-    background: url('/space.jpg') center/cover no-repeat;
-    border: 2px solid var(--color-card-border);
-  }
-
-  .about-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 6, 8, 0.2);
-    z-index: 0;
   }
 
   .about-card {
-    padding: 40px;
+    padding: 24px;
   }
 
+
   .about-text p {
-    margin-bottom: 16px;
-    font-size: 1.05rem;
-    line-height: 1.8;
+    margin-bottom: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
   }
 
   .personal-info {
-    padding: 28px;
+    padding: 24px;
   }
 
   .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
 
   .info-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    padding: 20px 12px;
-    background: rgba(6, 10, 26, 0.5);
+    gap: 4px;
+    padding: 14px 10px;
+    background: rgba(0, 0, 0, 0.03);
     text-align: center;
     border: var(--pixel-border);
     transition: border-color 0.3s ease, background 0.3s ease;
   }
 
   .info-item:hover {
-    border-color: var(--color-primary);
-    background: rgba(6, 10, 26, 0.7);
+    border-color: var(--color-text);
+    background: rgba(0, 0, 0, 0.06);
   }
 
   .info-label {
@@ -116,69 +104,20 @@
     color: var(--color-text);
   }
 
-  .learning-card {
-    padding: 24px 32px;
-  }
-
-  .learning-content {
+  .info-image {
+    margin-top: -48px;
     display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-
-  .learning-badge {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--color-secondary);
-    background: linear-gradient(135deg, rgba(240, 192, 64, 0.12) 0%, rgba(240, 192, 64, 0.05) 100%);
-    padding: 6px 16px;
-    border-radius: 20px;
-    border: 1px solid rgba(240, 192, 64, 0.2);
-    box-shadow: 0 0 20px rgba(240, 192, 64, 0.05);
-  }
-
-  .learning-detail {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .learning-lang {
-    font-size: 1.3rem;
-    font-weight: 700;
-    font-family: var(--font-heading);
-    color: #fff;
-    letter-spacing: 1px;
-  }
-
-  .learning-label {
-    font-size: 0.8rem;
-    color: var(--color-text-light);
-  }
-
-  .learning-progress {
-    flex: 1;
-    min-width: 120px;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-
-  .learning-bar {
-    height: 100%;
-    border-radius: 3px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-    transition: width 0.6s ease;
-  }
-
-  .learning-note {
-    font-size: 0.82rem;
-    color: var(--color-text-light);
+    justify-content: center;
     width: 100%;
+    position: relative;
+    z-index: 2;
+    padding-left: 72px;
+  }
+
+  .info-image img {
+    width: 400px;
+    height: auto;
+    display: inline-block;
   }
 
   @media (max-width: 640px) {
@@ -188,15 +127,6 @@
 
     .about-text p {
       font-size: 0.95rem;
-    }
-
-    .learning-content {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .learning-progress {
-      width: 100%;
     }
   }
 </style>

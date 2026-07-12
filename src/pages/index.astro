@@ -10,34 +10,85 @@ import Footer from '../components/Footer.astro';
 
 <Layout>
   <Hero />
-  <div class="section-divider">
+  <div class="wave-divider">
     <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-      <path class="divider-wave" d="M0,30 C360,60 720,0 1440,30 L1440,60 L0,60 Z" />
+      <path class="wave-divider-fill" d="M0,30 C360,60 720,0 1440,30 L1440,60 L0,60 Z" />
     </svg>
   </div>
-  <About />
-  <div class="section-divider">
+  <div class="side-by-side-wrap section-alt">
+    <div class="side-by-side">
+      <div class="side-half pattern-grid">
+        <About />
+      </div>
+      <div class="side-half pattern-stripes">
+        <Skills />
+      </div>
+    </div>
+  </div>
+  <div class="wave-divider">
     <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-      <path class="divider-wave" d="M0,30 C360,0 720,60 1440,30 L1440,60 L0,60 Z" />
+      <path class="wave-divider-fill" d="M0,30 C360,0 720,60 1440,30 L1440,60 L0,60 Z" />
     </svg>
   </div>
-  <Skills />
-  <div class="section-divider">
+  <div class="pattern-grid">
+    <Projects />
+  </div>
+  <div class="wave-divider" style="transform: rotate(180deg);">
     <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-      <path class="divider-mountain" d="M0,60 L240,10 L480,40 L720,5 L960,35 L1200,15 L1440,45 L1440,60 Z" />
+      <path class="wave-divider-fill" d="M0,30 C360,60 720,0 1440,30 L1440,60 L0,60 Z" />
     </svg>
   </div>
-  <Projects />
-  <div class="section-divider">
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-      <path class="divider-wave" d="M0,30 C360,60 720,0 1440,30 L1440,60 L0,60 Z" />
-    </svg>
+  <div class="pattern-stripes section-alt">
+    <Contact />
   </div>
-  <Contact />
-  <div class="section-divider">
+  <div class="wave-divider">
     <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-      <path class="divider-wave" d="M0,30 C360,60 720,0 1440,30 L1440,60 L0,60 Z" />
+      <path class="wave-divider-fill" d="M0,30 C360,60 720,0 1440,30 L1440,60 L0,60 Z" />
     </svg>
   </div>
   <Footer />
+  <style>
+    .side-by-side-wrap {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .side-by-side {
+      display: flex;
+      gap: 0;
+      max-width: 1600px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+
+    .side-half {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .side-half:first-child {
+      border-right: 1px solid var(--color-card-border);
+    }
+
+    .side-half :global(.section) {
+      max-width: none;
+      margin: 0;
+      padding: 80px 48px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .side-half :global(.section-title) {
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .side-by-side {
+        flex-direction: column;
+      }
+    }
+  </style>
 </Layout>
