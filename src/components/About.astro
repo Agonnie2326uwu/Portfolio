@@ -2,7 +2,6 @@
 ---
 
 <section class="section about-section" id="about">
-  <div class="mc-bg"></div>
   <div class="about-inner">
       <h2 class="section-title" data-animate>About Me</h2>
       <p class="section-subtitle" data-animate="fade">A Computer Science student with a passion for building and learning.</p>
@@ -53,6 +52,16 @@
   .about-section {
     position: relative;
     overflow: hidden;
+    background: url('/space.jpg') center/cover no-repeat;
+    border: 2px solid var(--color-card-border);
+  }
+
+  .about-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 6, 8, 0.2);
+    z-index: 0;
   }
 
   .about-card {
@@ -84,7 +93,6 @@
     background: rgba(6, 10, 26, 0.5);
     text-align: center;
     border: var(--pixel-border);
-    image-rendering: pixelated;
     transition: border-color 0.3s ease, background 0.3s ease;
   }
 

@@ -22,7 +22,6 @@ const skills = [
 ---
 
 <section class="section skills-section" id="skills">
-  <div class="mc-bg"></div>
   <div class="skills-inner">
       <h2 class="section-title" data-animate>Skills &amp; Technologies</h2>
       <p class="section-subtitle" data-animate="fade">Programming languages and tools I've worked with.</p>
@@ -45,6 +44,15 @@ const skills = [
   .skills-section {
     position: relative;
     overflow: hidden;
+    background: url('/space.jpg') center/cover no-repeat;
+  }
+
+  .skills-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 6, 8, 0.2);
+    z-index: 0;
   }
 
   .skills-inner {
@@ -60,6 +68,16 @@ const skills = [
 
   .skill-card {
     padding: 24px;
+    border: var(--pixel-border);
+    border-radius: var(--radius-md);
+    background: rgba(16, 8, 12, 0.85);
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .skill-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg), 0 0 30px var(--color-card-glow);
   }
 
   .skill-header {

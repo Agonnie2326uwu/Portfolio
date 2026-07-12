@@ -20,8 +20,6 @@ const projects = [
 ---
 
 <section class="section projects-section" id="projects">
-  <div class="mc-bg"></div>
-  <div class="mc-crafting-table"></div>
   <div class="projects-inner">
       <h2 class="section-title" data-animate>Projects</h2>
       <p class="section-subtitle" data-animate="fade">A selection of work I've built along my journey.</p>
@@ -54,6 +52,15 @@ const projects = [
   .projects-section {
     position: relative;
     overflow: hidden;
+    background: url('/space.jpg') center/cover no-repeat;
+  }
+
+  .projects-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 6, 8, 0.2);
+    z-index: 0;
   }
 
   .projects-grid {
@@ -66,6 +73,16 @@ const projects = [
     display: flex;
     flex-direction: column;
     padding: 28px;
+    border: var(--pixel-border);
+    border-radius: var(--radius-md);
+    background: rgba(16, 8, 12, 0.85);
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .project-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg), 0 0 30px var(--color-card-glow);
   }
 
   .project-image {

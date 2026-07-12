@@ -2,7 +2,6 @@
 ---
 
 <section class="section contact-section" id="contact">
-  <div class="mc-bg"></div>
   <div class="contact-inner">
       <h2 class="section-title" data-animate>Get in Touch</h2>
       <p class="section-subtitle" data-animate="fade">Have a question or want to work together? Reach out anytime.</p>
@@ -58,12 +57,31 @@
   .contact-section {
     position: relative;
     overflow: hidden;
+    background: url('/bg2.jpg') center/cover no-repeat;
+  }
+
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 6, 8, 0.2);
+    z-index: 0;
   }
 
   .contact-card {
     display: flex;
     gap: 40px;
     padding: 40px;
+    border: var(--pixel-border);
+    border-radius: var(--radius-md);
+    background: rgba(16, 8, 12, 0.85);
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .contact-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg), 0 0 30px var(--color-card-glow);
   }
 
   .contact-form {
@@ -98,7 +116,7 @@
 
   .form-input {
     padding: 14px 18px;
-    border: 1px solid var(--color-card-border);
+    border: 2px solid var(--color-card-border);
     border-radius: var(--radius-sm);
     font-family: var(--font-body);
     font-size: 0.95rem;
@@ -132,7 +150,7 @@
     justify-content: center;
     gap: 20px;
     padding-left: 40px;
-    border-left: 1px solid var(--color-card-border);
+    border-left: 2px solid var(--color-card-border);
   }
 
   .info-title {

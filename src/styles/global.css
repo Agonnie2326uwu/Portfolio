@@ -1,35 +1,35 @@
 :root {
-  --color-bg: #0a0e1a;
-  --color-primary: #39ff14;
-  --color-primary-dark: #2ad00f;
-  --color-primary-glow: rgba(57, 255, 20, 0.3);
-  --color-secondary: #ffff00;
-  --color-text: #b0f0b0;
-  --color-text-light: #70a070;
-  --color-accent: #00f0ff;
-  --color-accent-glow: rgba(0, 240, 255, 0.25);
-  --color-card: rgba(10, 20, 10, 0.85);
-  --color-card-border: rgba(57, 255, 20, 0.3);
-  --color-card-glow: rgba(57, 255, 20, 0.1);
-  --color-hero-bg: #060a0a;
+  --color-bg: #0a0608;
+  --color-primary: #e63946;
+  --color-primary-dark: #c1121f;
+  --color-primary-glow: rgba(230, 57, 70, 0.4);
+  --color-secondary: #ffffff;
+  --color-text: #ffffff;
+  --color-text-light: #e0e0e0;
+  --color-accent: #a06cd5;
+  --color-accent-glow: rgba(160, 108, 213, 0.3);
+  --color-card: rgba(16, 8, 12, 0.85);
+  --color-card-border: rgba(230, 57, 70, 0.3);
+  --color-card-glow: rgba(230, 57, 70, 0.12);
+  --color-hero-bg: #040204;
   --color-fire: #ff4400;
-  --color-ember: #ffaa00;
+  --color-ember: #ffffff;
 
-  --font-heading: 'Press Start 2P', cursive;
+  --font-heading: 'Cinzel', serif;
   --font-body: 'Inter', sans-serif;
 
-  --radius-sm: 0;
-  --radius-md: 0;
-  --radius-lg: 0;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
   --radius-round: 50%;
 
-  --shadow-sm: 0 2px 0 rgba(57, 255, 20, 0.2);
-  --shadow-md: 0 4px 0 rgba(57, 255, 20, 0.25);
-  --shadow-lg: 0 8px 0 rgba(57, 255, 20, 0.3);
-  --shadow-glow: 0 0 20px rgba(57, 255, 20, 0.08);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(230, 57, 70, 0.1);
 
   --pixel-border: 2px solid var(--color-card-border);
-  --pixel-border-glow: 2px solid rgba(57, 255, 20, 0.5);
+  --pixel-border-glow: 2px solid rgba(230, 57, 70, 0.5);
 }
 
 *, *::before, *::after {
@@ -44,7 +44,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-bg);
+  background: #0a0608 url('/manyeyes.jpg') center/cover no-repeat fixed;
   color: var(--color-text);
   line-height: 1.7;
   overflow-x: hidden;
@@ -139,7 +139,6 @@ img {
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
   overflow: hidden;
-  image-rendering: pixelated;
 }
 
 .card::before {
@@ -178,7 +177,6 @@ img {
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
-  image-rendering: pixelated;
 }
 
 .btn-primary {
@@ -403,7 +401,6 @@ img {
   box-shadow: 0 0 20px rgba(255, 255, 0, 0.2);
   pointer-events: none;
   z-index: 1;
-  image-rendering: pixelated;
 }
 
 .moon-hero {
@@ -466,7 +463,6 @@ img {
   pointer-events: none;
   z-index: 1;
   animation: float 20s ease-in-out infinite;
-  image-rendering: pixelated;
 }
 
 .planet-saturn {
@@ -578,7 +574,6 @@ img {
   box-shadow: 0 0 40px rgba(255, 255, 0, 0.2), 0 0 80px rgba(255, 255, 0, 0.08);
   pointer-events: none;
   z-index: 1;
-  image-rendering: pixelated;
 }
 
 .moon-big::after {
@@ -1321,186 +1316,4 @@ img {
   .footer {
     padding: 40px 16px 0 !important;
   }
-}
-
-/* Minecraft background theme */
-.mc-bg {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.mc-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, #87ceeb 0%, #87ceeb 55%, transparent 55%),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 63px,
-      rgba(255,255,255,0.05) 63px,
-      rgba(255,255,255,0.05) 64px
-    );
-  background-size: 100% 100%, 64px 64px;
-}
-
-.mc-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 63px,
-      rgba(0,0,0,0.03) 63px,
-      rgba(0,0,0,0.03) 64px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 63px,
-      rgba(0,0,0,0.03) 63px,
-      rgba(0,0,0,0.03) 64px
-    );
-  background-size: 64px 64px;
-  opacity: 0.3;
-}
-
-/* Grass blocks at bottom of sections */
-.mc-bg .grass-row {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 64px;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      #7c9c5c 0px,
-      #7c9c5c 63px,
-      #6b8c4e 63px,
-      #6b8c4e 64px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      #7c9c5c 0px,
-      #7c9c5c 31px,
-      #6b8c4e 31px,
-      #6b8c4e 32px
-    );
-  background-size: 64px 64px;
-  image-rendering: pixelated;
-}
-
-/* Village background for Hero */
-.mc-village {
-  position: absolute;
-  bottom: 64px;
-  left: 0;
-  right: 0;
-  height: 200px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* House 1 - left */
-.mc-village::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 8%;
-  width: 64px;
-  height: 100px;
-  background:
-    repeating-linear-gradient(0deg, #8b6b4e 0px, #8b6b4e 15px, #7a5d44 15px, #7a5d44 16px);
-  border: 2px solid #5a3d2a;
-  image-rendering: pixelated;
-  box-shadow:
-    0 -30px 0 -2px #a0522d,
-    0 -30px 0 0 #5a3d2a;
-}
-
-/* House 2 - right */
-.mc-village::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 12%;
-  width: 80px;
-  height: 130px;
-  background:
-    repeating-linear-gradient(0deg, #8b6b4e 0px, #8b6b4e 15px, #7a5d44 15px, #7a5d44 16px);
-  border: 2px solid #5a3d2a;
-  image-rendering: pixelated;
-  box-shadow:
-    0 -40px 0 -2px #a0522d,
-    0 -40px 0 0 #5a3d2a;
-}
-
-/* Crafting table background for Projects */
-.mc-crafting-table {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 192px;
-  height: 192px;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    /* Top face - crafting grid */
-    repeating-linear-gradient(90deg, #8b6b4e 0px, #8b6b4e 47px, #7a5d44 47px, #7a5d44 48px),
-    repeating-linear-gradient(0deg, #8b6b4e 0px, #8b6b4e 47px, #7a5d44 47px, #7a5d44 48px);
-  background-size: 48px 48px;
-  background-blend-mode: normal;
-  border: 3px solid #5a3d2a;
-  image-rendering: pixelated;
-}
-
-.mc-crafting-table::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    /* Grid lines */
-    linear-gradient(90deg, transparent 47px, #5a3d2a 47px, #5a3d2a 48px),
-    linear-gradient(90deg, transparent 95px, #5a3d2a 95px, #5a3d2a 96px),
-    linear-gradient(0deg, transparent 47px, #5a3d2a 47px, #5a3d2a 48px),
-    linear-gradient(0deg, transparent 95px, #5a3d2a 95px, #5a3d2a 96px);
-  background-size: 144px 144px, 144px 144px, 144px 144px, 144px 144px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.mc-crafting-table::after {
-  content: '';
-  position: absolute;
-  top: -16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 16px;
-  background: #a0522d;
-  border: 2px solid #5a3d2a;
-  image-rendering: pixelated;
-}
-
-/* Minecraft dirt path separator */
-.mc-dirt {
-  height: 16px;
-  background:
-    repeating-linear-gradient(90deg, #8b6b4e 0px, #8b6b4e 15px, #7a5d44 15px, #7a5d44 16px);
-  image-rendering: pixelated;
-}
-
-@keyframes mcFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
 }
