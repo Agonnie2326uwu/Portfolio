@@ -65,7 +65,6 @@ import Navigation from './Navigation.astro';
   <div class="shooting-star shooting-star-2"></div>
   <div class="shooting-star" style="top:30%;right:60%;animation: shootStar 14s ease-in-out 4s infinite;width:2px;height:2px;"></div>
   <div class="shooting-star" style="top:5%;right:30%;animation: shootStar 10s ease-in-out 8s infinite;"></div>
-  <div class="hero-card">
     <div class="hero-content">
       <div class="hero-text">
         <p class="hero-greeting">Hello, I'm</p>
@@ -81,7 +80,6 @@ import Navigation from './Navigation.astro';
         <div class="hero-photo-frame hover-zoom float-anim">
           <img src="/Me.png" alt="Carl Andre A. De Castro" class="hero-photo-img" />
         </div>
-      </div>
     </div>
   </div>
 </section>
@@ -105,42 +103,6 @@ import Navigation from './Navigation.astro';
       radial-gradient(ellipse at 70% 60%, rgba(74, 158, 255, 0.1) 0%, transparent 40%),
       radial-gradient(ellipse at 50% 20%, rgba(240, 192, 64, 0.06) 0%, transparent 40%);
     z-index: 1;
-  }
-
-  .hero-card {
-    background: linear-gradient(180deg, var(--color-card) 0%, rgba(6, 12, 6, 0.7) 100%);
-    border: var(--pixel-border);
-    border-radius: var(--radius-lg);
-    padding: 48px 56px 40px;
-    box-shadow: var(--shadow-sm), var(--shadow-glow);
-    backdrop-filter: blur(8px);
-    position: relative;
-    z-index: 2;
-    max-width: 1000px;
-    width: 100%;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
-    image-rendering: pixelated;
-  }
-
-  .hero-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--color-primary);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .hero-card:hover::before {
-    opacity: 0.5;
-  }
-
-  .hero-card:hover {
-    box-shadow: var(--shadow-lg), 0 0 30px var(--color-card-glow);
-    border-color: rgba(57, 255, 20, 0.5);
   }
 
   .hero-content {

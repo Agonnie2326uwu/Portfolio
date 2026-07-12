@@ -315,42 +315,6 @@ img {
   z-index: 2;
 }
 
-.section-card {
-  background: linear-gradient(180deg, var(--color-card) 0%, rgba(6, 12, 6, 0.7) 100%);
-  border: var(--pixel-border);
-  border-radius: var(--radius-lg);
-  padding: 48px 56px 40px;
-  box-shadow: var(--shadow-sm), var(--shadow-glow);
-  backdrop-filter: blur(8px);
-  position: relative;
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
-  image-rendering: pixelated;
-}
-
-.section-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--color-primary);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.section-card:hover::before {
-  opacity: 0.5;
-}
-
-.section-card:hover {
-  box-shadow: var(--shadow-lg), 0 0 30px var(--color-card-glow);
-  border-color: rgba(57, 255, 20, 0.5);
-}
-
 /* Twinkling pixel stars */
 .star {
   position: absolute;
