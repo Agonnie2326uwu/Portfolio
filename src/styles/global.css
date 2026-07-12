@@ -1318,6 +1318,12 @@ img {
     height: 38px;
   }
 
+  .footer {
+    padding: 40px 16px 0 !important;
+  }
+}
+
+/* Star Wars background theme */
 .starwars-bg {
   position: absolute;
   inset: 0;
@@ -1381,7 +1387,90 @@ img {
   100% { opacity: 1; }
 }
 
-  .footer {
-    padding: 40px 16px 0 !important;
-  }
+/* Star Wars ships */
+.sw-ship {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.sw-ship svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.sw-ship:hover {
+  opacity: 1;
+}
+
+/* Death Star - Hero only */
+.death-star {
+  width: 160px;
+  height: 160px;
+  top: 5%;
+  right: 3%;
+  animation: drift 20s ease-in-out infinite;
+}
+
+/* Star Destroyer - About */
+.star-destroyer {
+  width: 200px;
+  height: 100px;
+  top: 15%;
+  right: 2%;
+  animation: drift 25s ease-in-out infinite reverse;
+}
+
+/* X-wing - Skills */
+.xwing {
+  width: 120px;
+  height: 80px;
+  top: 60%;
+  left: 2%;
+  animation: drift 18s ease-in-out infinite;
+}
+
+/* TIE Fighter - Projects */
+.tie-fighter {
+  width: 80px;
+  height: 80px;
+  top: 10%;
+  right: 4%;
+  animation: drift 22s ease-in-out infinite reverse;
+}
+
+/* CR90 Corvette - Contact */
+.cr90 {
+  width: 180px;
+  height: 60px;
+  top: 70%;
+  left: 2%;
+  animation: drift 30s ease-in-out infinite;
+}
+
+/* Millennium Falcon - Hero */
+.falcon {
+  width: 90px;
+  height: 36px;
+  bottom: 20%;
+  left: 5%;
+  animation: drift 28s ease-in-out infinite reverse;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-8px) translateX(4px); }
+  50% { transform: translateY(4px) translateX(-4px); }
+  75% { transform: translateY(-4px) translateX(8px); }
+}
+
+@media (max-width: 768px) {
+  .death-star { width: 80px; height: 80px; }
+  .star-destroyer { width: 120px; height: 60px; }
+  .xwing { width: 70px; height: 46px; }
+  .tie-fighter { width: 50px; height: 50px; }
+  .cr90 { width: 100px; height: 34px; }
+  .falcon { width: 50px; height: 20px; }
 }
