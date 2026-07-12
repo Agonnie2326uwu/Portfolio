@@ -99,15 +99,15 @@
     align-items: center;
     gap: 6px;
     padding: 20px 12px;
-    border-radius: var(--radius-sm);
     background: rgba(6, 10, 26, 0.5);
     text-align: center;
-    border: 1px solid rgba(124, 109, 240, 0.08);
+    border: var(--pixel-border);
+    image-rendering: pixelated;
     transition: border-color 0.3s ease, background 0.3s ease;
   }
 
   .info-item:hover {
-    border-color: rgba(124, 109, 240, 0.2);
+    border-color: var(--color-primary);
     background: rgba(6, 10, 26, 0.7);
   }
 
