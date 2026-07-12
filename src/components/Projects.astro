@@ -76,7 +76,7 @@ const projects = [
 
       <div class="projects-grid">
         {projects.map((project, i) => (
-          <div class="project-card card" data-animate="scale" style={"transition-delay:" + (i * 0.15) + "s"}>
+          <div class="project-card card float-anim" data-animate="scale" style={"transition-delay:" + (i * 0.15) + "s;animation-delay:" + (i * 0.8) + "s"}>
             {project.image && <div class="project-image"><img src={project.image} alt={project.title} /></div>}
             <div class="project-type">{project.type}</div>
             <h3 class="project-title">{project.title}</h3>

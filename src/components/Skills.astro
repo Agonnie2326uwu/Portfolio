@@ -1,12 +1,6 @@
 ---
 const skills = [
   {
-    name: 'Java',
-    level: 'Advanced',
-    projects: 8,
-    desc: 'Object-oriented programming, data structures, and cross-platform application development.',
-  },
-  {
     name: 'Python',
     level: 'Advanced',
     projects: 6,
@@ -67,7 +61,7 @@ const skills = [
 
       <div class="skills-grid">
         {skills.map((skill, i) => (
-          <div class="skill-card card" data-animate="scale" style={"transition-delay:" + (i * 0.1) + "s"}>
+          <div class="skill-card card float-anim" data-animate="scale" style={"transition-delay:" + (i * 0.1) + "s;animation-delay:" + (i * 0.5) + "s"}>
             <div class="skill-header">
               <h3 class="skill-name">{skill.name}</h3>
               <span class="skill-level">{skill.level}</span>

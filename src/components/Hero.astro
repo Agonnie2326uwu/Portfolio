@@ -78,7 +78,7 @@ import Navigation from './Navigation.astro';
         </div>
       </div>
       <div class="hero-photo-wrapper" data-animate="scale">
-        <div class="hero-photo-frame">
+        <div class="hero-photo-frame hover-zoom float-anim">
           <img src="/Me.png" alt="Carl Andre A. De Castro" class="hero-photo-img" />
         </div>
       </div>
@@ -108,17 +108,18 @@ import Navigation from './Navigation.astro';
   }
 
   .hero-card {
-    background: linear-gradient(135deg, var(--color-card) 0%, rgba(18, 24, 56, 0.6) 100%);
-    border: 1px solid var(--color-card-border);
+    background: linear-gradient(180deg, var(--color-card) 0%, rgba(6, 12, 6, 0.7) 100%);
+    border: var(--pixel-border);
     border-radius: var(--radius-lg);
     padding: 48px 56px 40px;
     box-shadow: var(--shadow-sm), var(--shadow-glow);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
     position: relative;
     z-index: 2;
     max-width: 1000px;
     width: 100%;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    image-rendering: pixelated;
   }
 
   .hero-card::before {
@@ -127,19 +128,19 @@ import Navigation from './Navigation.astro';
     top: 0;
     left: 0;
     right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(124, 109, 240, 0.3), transparent);
+    height: 2px;
+    background: var(--color-primary);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
 
   .hero-card:hover::before {
-    opacity: 1;
+    opacity: 0.5;
   }
 
   .hero-card:hover {
-    box-shadow: var(--shadow-lg), 0 0 60px var(--color-card-glow);
-    border-color: rgba(124, 109, 240, 0.3);
+    box-shadow: var(--shadow-lg), 0 0 30px var(--color-card-glow);
+    border-color: rgba(57, 255, 20, 0.5);
   }
 
   .hero-content {
@@ -184,41 +185,42 @@ import Navigation from './Navigation.astro';
 
   .hero-greeting {
     font-family: var(--font-heading);
-    font-size: 1rem;
+    font-size: 0.75rem;
     color: var(--color-secondary);
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     animation: fadeInUp 0.6s ease 0.2s both;
     font-weight: 500;
     opacity: 0.8;
   }
 
   .hero-name {
-    font-size: 4rem;
-    color: #fff;
+    font-size: 3.2rem;
+    color: var(--color-primary);
     margin-bottom: 12px;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
     animation: fadeInUp 0.6s ease 0.3s both;
-    letter-spacing: -1px;
-    line-height: 1.1;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: var(--font-heading);
   }
 
   .hero-gradient {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 40%, var(--color-secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: none;
+    -webkit-text-fill-color: var(--color-primary);
+    color: var(--color-primary);
   }
 
   .hero-field {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+    color: var(--color-accent);
     margin-bottom: 16px;
     font-weight: 400;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
     animation: fadeInUp 0.6s ease 0.4s both;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     position: relative;
     display: inline-block;
     padding-bottom: 14px;
@@ -231,9 +233,9 @@ import Navigation from './Navigation.astro';
     left: 0;
     width: 40px;
     height: 2px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-    border-radius: 1px;
-    opacity: 0.5;
+    background: var(--color-accent);
+    box-shadow: 0 0 6px rgba(0, 240, 255, 0.5);
+    opacity: 0.7;
   }
 
   .hero-bio {
@@ -254,14 +256,13 @@ import Navigation from './Navigation.astro';
   }
 
   .hero-actions .btn-outline {
-    color: #fff;
-    border-color: #fff;
-    border-width: 2px;
+    color: var(--color-accent);
+    border-color: var(--color-accent);
   }
 
   .hero-actions .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: #fff;
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--color-accent);
   }
 
   @media (max-width: 768px) {
