@@ -5,66 +5,10 @@ import Navigation from './Navigation.astro';
 <Navigation />
 
 <section class="hero" id="home">
-  <div class="cosmic-bg" data-parallax="0.15"></div>
-  <div class="stars-dense" data-parallax="0.1"></div>
-  <div class="stars-dense" style="transform: scale(1.5) rotate(45deg); opacity: 0.5;"></div>
-  <div class="hero-nebula"></div>
-  <div class="moon-big moon-top-right"></div>
   <div class="planet planet-saturn" style="top:18%;left:6%;"></div>
   <div class="planet planet-nebula" style="bottom:28%;left:3%;transform:scale(0.8);"></div>
   <div class="planet planet-small" style="bottom:15%;right:5%;"></div>
   <div class="planet planet-small" style="top:40%;right:2%;"></div>
-  <div class="constellation constellation-1">
-    <svg viewBox="0 0 120 80">
-      <circle class="constellation-dot" cx="10" cy="20" r="3" />
-      <circle class="constellation-dot" cx="30" cy="55" r="2.5" />
-      <circle class="constellation-dot" cx="60" cy="15" r="3" />
-      <circle class="constellation-dot" cx="90" cy="45" r="2.5" />
-      <circle class="constellation-dot" cx="110" cy="25" r="2" />
-      <line class="constellation-line" x1="10" y1="20" x2="30" y2="55" />
-      <line class="constellation-line" x1="30" y1="55" x2="60" y2="15" />
-      <line class="constellation-line" x1="60" y1="15" x2="90" y2="45" />
-      <line class="constellation-line constellation-line-2" x1="90" y1="45" x2="110" y2="25" />
-    </svg>
-  </div>
-  <div class="constellation constellation-2" style="top:auto;bottom:10%;right:2%;width:90px;height:60px;">
-    <svg viewBox="0 0 90 60">
-      <circle class="constellation-dot" cx="10" cy="40" r="2" />
-      <circle class="constellation-dot" cx="25" cy="10" r="2.5" />
-      <circle class="constellation-dot" cx="45" cy="30" r="2" />
-      <circle class="constellation-dot" cx="65" cy="8" r="2" />
-      <circle class="constellation-dot" cx="82" cy="45" r="2" />
-      <line class="constellation-line" x1="10" y1="40" x2="25" y2="10" />
-      <line class="constellation-line" x1="25" y1="10" x2="45" y2="30" />
-      <line class="constellation-line" x1="45" y1="30" x2="65" y2="8" />
-      <line class="constellation-line constellation-line-2" x1="65" y1="8" x2="82" y2="45" />
-    </svg>
-  </div>
-  <div class="constellation constellation-3" style="top:auto;bottom:30%;left:2%;width:80px;height:55px;">
-    <svg viewBox="0 0 80 55">
-      <circle class="constellation-dot" cx="15" cy="40" r="2.5" />
-      <circle class="constellation-dot" cx="35" cy="15" r="2" />
-      <circle class="constellation-dot" cx="55" cy="30" r="2.5" />
-      <circle class="constellation-dot" cx="70" cy="8" r="2" />
-      <line class="constellation-line" x1="15" y1="40" x2="35" y2="15" />
-      <line class="constellation-line" x1="35" y1="15" x2="55" y2="30" />
-      <line class="constellation-line" x1="55" y1="30" x2="70" y2="8" />
-    </svg>
-  </div>
-  <div class="star star-1"></div>
-  <div class="star star-2"></div>
-  <div class="star star-3"></div>
-  <div class="star star-4"></div>
-  <div class="star star-5"></div>
-  <div class="star star-6"></div>
-  <div class="star star-7"></div>
-  <div class="star star-8"></div>
-  <div class="star star-9"></div>
-  <div class="star star-10"></div>
-  <div class="shooting-star shooting-star-1"></div>
-  <div class="shooting-star shooting-star-2"></div>
-  <div class="shooting-star" style="top:30%;right:60%;animation: shootStar 14s ease-in-out 4s infinite;width:2px;height:2px;"></div>
-  <div class="shooting-star" style="top:5%;right:30%;animation: shootStar 10s ease-in-out 8s infinite;"></div>
     <div class="hero-content">
       <div class="hero-text">
         <p class="hero-greeting">Hello, I'm</p>
@@ -72,7 +16,7 @@ import Navigation from './Navigation.astro';
         <p class="hero-field">Web Developer &amp; Tech Support</p>
         <p class="hero-bio">A CS student from Puerto Princesa who enjoys building software, solving problems, and caring for animals. I'm always learning and working on projects I can be proud of.</p>
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#projects" class="btn-text">View My Work</a>
           <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
       </div>
@@ -225,6 +169,25 @@ import Navigation from './Navigation.astro';
   .hero-actions .btn-outline:hover {
     background: rgba(0, 240, 255, 0.1);
     color: var(--color-accent);
+  }
+
+  .btn-text {
+    display: inline-block;
+    padding: 14px 32px;
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    image-rendering: pixelated;
+  }
+
+  .btn-text:hover {
+    color: var(--color-primary-dark);
+    transform: translateY(-2px);
   }
 
   @media (max-width: 768px) {
