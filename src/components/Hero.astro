@@ -11,7 +11,7 @@ import Navigation from './Navigation.astro';
         <p class="hero-greeting">Hello, I'm</p>
         <h1 class="hero-name hero-gradient">Carl De Castro</h1>
         <p class="hero-field">Web Developer &amp; Tech Support</p>
-        <p class="hero-bio">A CS student from Puerto Princesa who enjoys building software, solving problems, and caring for animals. I'm always learning and working on projects I can be proud of.</p>
+        <p class="hero-bio">A CS student from Puerto Princesa with a passion for web development and technology. Skilled in building responsive websites and providing reliable technical support. Committed to continuous learning and creating practical, user-focused digital solutions.</p>
         <div class="hero-actions">
           <a href="#projects" class="btn-text">View My Work</a>
           <a href="#contact" class="btn btn-outline">Get in Touch</a>
@@ -180,10 +180,12 @@ import Navigation from './Navigation.astro';
     text-decoration: none;
     transition: all 0.3s ease;
     image-rendering: pixelated;
+    border: var(--pixel-border);
   }
 
   .btn-text:hover {
     color: var(--color-primary-dark);
+    border-color: var(--color-primary);
     transform: translateY(-2px);
   }
 
