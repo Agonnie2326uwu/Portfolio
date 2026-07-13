@@ -52,6 +52,8 @@
   height: 60px;
   overflow: hidden;
   line-height: 0;
+  background: #fff url('/morepokeball.png') repeat;
+  background-size: 420px auto;
 }
 
 .wave-divider svg {
@@ -62,8 +64,7 @@
 }
 
 .wave-divider-fill {
-  fill: var(--color-bg);
-  opacity: 0.6;
+  fill: transparent;
 }
 
 /* Subtle grid overlay for variety */
