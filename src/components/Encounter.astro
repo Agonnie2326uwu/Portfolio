@@ -300,6 +300,118 @@
     0%, 100% { transform: translateX(-50%) rotate(-3deg); }
     50% { transform: translateX(-50%) rotate(3deg); }
   }
+
+  @media (max-width: 768px) {
+    .enemy-bar {
+      top: 20px;
+      right: 20px;
+      left: 20px;
+      width: auto;
+      padding: 12px 16px;
+    }
+
+    .pokemon-name {
+      font-size: 0.9rem;
+    }
+
+    .pokemon-level {
+      font-size: 0.6rem;
+    }
+
+    .hp-label {
+      font-size: 0.5rem;
+    }
+
+    .hp-bar {
+      height: 10px;
+    }
+
+    .enemy-sprite-area {
+      top: 140px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    .enemy-platform {
+      width: 180px;
+      height: 55px;
+    }
+
+    .enemy-sprite {
+      width: 150px;
+      height: 150px;
+      bottom: 25px;
+    }
+
+    .battle-text-box {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+      padding: 12px 14px;
+      margin: 0 8px 8px;
+    }
+
+    .battle-text-left {
+      text-align: center;
+    }
+
+    .battle-dialog {
+      font-size: 0.7rem;
+    }
+
+    .battle-menu {
+      min-width: unset;
+      gap: 8px;
+    }
+
+    .battle-menu-btn {
+      padding: 10px 8px;
+      font-size: 0.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .enemy-bar {
+      top: 12px;
+      padding: 10px 12px;
+    }
+
+    .pokemon-name {
+      font-size: 0.7rem;
+    }
+
+    .pokemon-level {
+      font-size: 0.5rem;
+    }
+
+    .hp-bar {
+      height: 8px;
+    }
+
+    .enemy-sprite-area {
+      top: 110px;
+    }
+
+    .enemy-platform {
+      width: 140px;
+      height: 45px;
+    }
+
+    .enemy-sprite {
+      width: 120px;
+      height: 120px;
+      bottom: 20px;
+    }
+
+    .battle-dialog {
+      font-size: 0.6rem;
+    }
+
+    .battle-menu-btn {
+      padding: 8px 6px;
+      font-size: 0.45rem;
+    }
+  }
 </style>
 
 <script>
