@@ -52,8 +52,7 @@
   height: 60px;
   overflow: hidden;
   line-height: 0;
-  background: #fff url('/morepokeball.png') repeat;
-  background-size: 420px auto;
+  background: #fff;
 }
 
 .wave-divider svg {
