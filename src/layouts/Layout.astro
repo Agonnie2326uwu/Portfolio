@@ -1,4 +1,6 @@
 ---
+import Encounter from '../components/Encounter.astro';
+
 interface Props {
   title?: string;
   description?: string;
@@ -16,10 +18,11 @@ const { title = "Carl De Castro | Portfolio", description = "A CS student's digi
     <link rel="icon" type="image/jpeg" href="/pokeball pixel art.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
     <title>{title}</title>
   </head>
   <body>
+    <Encounter />
     <slot />
     <button id="backtotop" class="back-to-top" aria-label="Back to top">
       <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
